@@ -75,7 +75,7 @@ class AttendanceTimeWidget extends StatelessWidget {
                   ],
                 ),
                 SizedBox(width: getProportionateScreenWidth(20),),
-                AppAssetsImage(getProportionateScreenHeight(20), getProportionateScreenWidth(20), "assets/left_arrows.png")
+                AppAssetsImage(getProportionateScreenHeight(20), getProportionateScreenWidth(20), "assets/images/left_arrows.png")
               ],
             ),
           ),

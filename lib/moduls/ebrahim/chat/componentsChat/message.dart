@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demoui2/models/chat/chatMessageModel.dart';
-import 'package:flutter_demoui2/moduls/chat/componentsChat/audio_message.dart';
-import 'package:flutter_demoui2/moduls/chat/componentsChat/text_message.dart';
+import 'package:flutter_demoui2/moduls/ebrahim/chat/componentsChat/text_message.dart';
+
+import 'audio_message.dart';
 
 
 class Message extends StatelessWidget {

@@ -22,12 +22,12 @@ getChatppBar(BuildContext context){
               children: [
                 Row(
                   children: [
-                    VoiceCallBtn("assets/white_call.png"),
+                    VoiceCallBtn("assets/images/white_call.png"),
                     SizedBox(width: SizeConfig.screenWidth*0.05,),
-                    VideoCallBtn("assets/white_video.png")
+                    VideoCallBtn("assets/images/white_video.png")
                   ],
                 ),
-                EmployeeImage("assets/ana.jpg", "اسم الموظف", false)
+                EmployeeImage("assets/images/ana.jpg", "اسم الموظف", false)
               ],
             ),
             SizedBox(height: getProportionateScreenHeight(30),)
