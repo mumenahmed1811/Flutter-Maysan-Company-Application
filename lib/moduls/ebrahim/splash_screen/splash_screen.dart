@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_demoui2/moduls/login&register/login_screen.dart';
+import 'package:flutter_demoui2/moduls/ebrahim/login&register/login_screen.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class SplashScreen extends StatefulWidget {

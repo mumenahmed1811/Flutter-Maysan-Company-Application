@@ -37,7 +37,7 @@ double getProportionateScreenWidth(double inputWidth) {
 double getProportionateText(double value) {
   double screenHeight = SizeConfig.screenHeight;
   // 375 is the layout width that designer use
-  return (value / 720) * screenHeight; // it's like +2 textSize
+  return (value / 720) * screenHeight - 3; // it's like +2 textSize
 }
 
 

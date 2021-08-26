@@ -5,7 +5,7 @@ import 'package:hexcolor/hexcolor.dart';
 import 'componentsChat/message.dart';
 
 
-class ChatScreen extends StatelessWidget {
+class ChatScreen_2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {

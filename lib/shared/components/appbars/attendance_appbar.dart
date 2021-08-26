@@ -15,7 +15,7 @@ getAttendanceAppBar(String appbarTitle){
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          AppAssetsImage(getProportionateScreenHeight(100), getProportionateScreenWidth(100), "assets/fingerprint_2.png"),
+          AppAssetsImage(getProportionateScreenHeight(100), getProportionateScreenWidth(100), "assets/images/fingerprint_2.png"),
           Text(appbarTitle, style: TextStyle(color: Color(0xFF161D6F), fontSize: getProportionateText(28)),),
           SizedBox(height: getProportionateScreenHeight(10),)
         ],

@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demoui2/shared/components/size_config.dart';
 import 'package:flutter_demoui2/shared/styles/themes.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-// ignore: unused_import
-import 'moduls/Requests (exit - resignation)/Requests_resignation_screen.dart';
-// ignore: unused_import
-import 'moduls/Transfer_request/Transfer_request_screen.dart';
-// ignore: unused_import
-import 'moduls/login&register/login_screen.dart';
-// ignore: unused_import
-import 'moduls/vacation_requests/vacation_requests_screen.dart';
+
+
+import 'moduls/mumen/chat/chat_screen.dart';
+import 'moduls/mumen/working_team/working_team_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -29,7 +26,18 @@ class MyApp extends StatelessWidget {
       locale: Locale("ar", "AE"), // OR Locale('ar', 'AE') OR Other RTL locales,
       debugShowCheckedModeBanner: false,
       theme: defaultTheme,
-      home: RequestsResignationScreen(),
+      home: Main(),
     );
   }
 }
+
+class Main extends StatelessWidget {
+  const Main({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    SizeConfig.init(context);
+    return WorkingTeamScreen();
+  }
+}
+

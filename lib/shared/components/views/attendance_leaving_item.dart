@@ -25,7 +25,7 @@ class AttendanceLeavingItem extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          AppAssetsImage(getProportionateScreenHeight(40), getProportionateScreenWidth(40), "assets/blue_fingerprint.png"),
+          AppAssetsImage(getProportionateScreenHeight(40), getProportionateScreenWidth(40), "assets/images/blue_fingerprint.png"),
           Text(desc, style: TextStyle(color: Color(0xFF161D6F), fontSize: 15), textAlign: TextAlign.center,),
           AppTextButton(getProportionateScreenHeight(30), getProportionateScreenWidth(120), 20, btnText, getProportionateText(8), fun)
         ],
