@@ -2,7 +2,7 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 
-import '../size_config.dart';
+
 import 'button.dart';
 import 'image.dart';
 

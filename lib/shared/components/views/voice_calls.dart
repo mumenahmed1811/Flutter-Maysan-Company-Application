@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../size_config.dart';
+
 import 'image.dart';
 
 class IncomingCallLerLogo extends StatelessWidget {

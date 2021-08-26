@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demoui2/shared/components/views/image.dart';
 
-import '../size_config.dart';
 
 getAttendanceAppBar(String appbarTitle){
 
