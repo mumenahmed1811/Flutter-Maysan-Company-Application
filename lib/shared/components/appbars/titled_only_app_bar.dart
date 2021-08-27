@@ -10,7 +10,8 @@ TitledOnlyAppBar(String appbarTitle){
     backgroundColor: AppColors.yellow,
     centerTitle: true,
     title: Text(appbarTitle, style: TextStyle(color: AppColors.darkBlueFontColor, fontSize: getProportionateText(33)),),
-    leading: Icon(Icons.menu, color: Colors.white, size: getProportionateText(40),),
+    actions: [Icon(Icons.menu, color: Colors.white, size: getProportionateText(40),)],
+    //leading: ,
     shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30), bottomRight: Radius.circular(30))
     ),

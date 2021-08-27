@@ -23,8 +23,10 @@ class EmployeeItem extends StatelessWidget {
       child: Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          textDirection: TextDirection.ltr,
           children: [
             Row(
+              textDirection: TextDirection.ltr,
               children: [
                 EmployeeItemBtn("assets/images/yellow_chat.png", "مراسلة"),
                 SizedBox(width: getProportionateScreenWidth(10),),
@@ -35,6 +37,7 @@ class EmployeeItem extends StatelessWidget {
             ),
             Expanded(
               child: Row(
+                textDirection: TextDirection.ltr,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Column(

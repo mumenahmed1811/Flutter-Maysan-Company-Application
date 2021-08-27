@@ -18,9 +18,11 @@ getChatppBar(BuildContext context){
         child: Column(
           children: [
             Row(
+              textDirection: TextDirection.ltr,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
+                  textDirection: TextDirection.ltr,
                   children: [
                     VoiceCallBtn("assets/images/white_call.png"),
                     SizedBox(width: SizeConfig.screenWidth*0.05,),
@@ -35,7 +37,8 @@ getChatppBar(BuildContext context){
         ),
       ),
     ),
-    leading: Icon(Icons.menu, color: Colors.white, size: getProportionateText(40),),
+    actions: [Icon(Icons.menu, color: Colors.white, size: getProportionateText(40),)],
+    //leading: ,
     shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30), bottomRight: Radius.circular(30))
     ),

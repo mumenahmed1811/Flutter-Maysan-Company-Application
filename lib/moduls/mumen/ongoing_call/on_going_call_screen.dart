@@ -31,6 +31,7 @@ class _OnGoingCallScreenState extends State<OnGoingCallScreen> {
               Container(
                 width: SizeConfig.screenWidth*0.6,
                 child: Row(
+                  textDirection: TextDirection.ltr,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                       VoiceCallButton(Icons.mic, Color(0xFFFFC14F), Colors.black),

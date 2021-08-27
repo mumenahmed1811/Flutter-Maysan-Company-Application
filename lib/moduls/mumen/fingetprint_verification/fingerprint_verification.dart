@@ -8,15 +8,15 @@ class FingerprintVerificationScreen extends StatelessWidget {
   const FingerprintVerificationScreen({Key? key}) : super(key: key);
 
   final String txt1 = "برجاء وضع بصمتك\n للتأكد من هوية\n المستخدم";
-  final String txt2 = "براجاء وضع البصمة الخاصة بالمستخدم و ليس شخص آخر للتأكد من هوية المستخدم";
+  final String txt2 = "براجاء وضع البصمة الخاصة بالمستخدم و ليس\n شخص آخر للتأكد من هوية المستخدم";
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Center(
-        child: Scaffold(
-          backgroundColor: AppColors.bgColor,
-          body: Column(
+      child: Scaffold(
+        backgroundColor: AppColors.bgColor,
+        body: Center(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [

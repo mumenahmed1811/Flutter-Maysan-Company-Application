@@ -37,6 +37,7 @@ class _RequestsScreenState extends State<RequestsScreen> {
                     ),
                     SizedBox(height: getProportionateScreenHeight(20),),
                     Row(
+                      textDirection: TextDirection.ltr,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Request("assets/images/network.png", "فريق العمل", getProportionateScreenHeight(50),getProportionateScreenWidth(50)),
