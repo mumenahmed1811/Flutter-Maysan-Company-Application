@@ -8,11 +8,8 @@ getHomeAppBar(){
   return AppBar(
     backgroundColor: Color(0xFF161D6F),
     actions: [
-      Container(
-        margin: EdgeInsets.only(top: getProportionateScreenHeight(10)),
-        child: CircularBorderImage(getProportionateScreenHeight(10), getProportionateScreenWidth(50), Colors.white, getProportionateScreenWidth(2.0), "assets/arabMan.png"),
-      ),
-      SizedBox(width: getProportionateScreenWidth(10),),
+      Icon(Icons.menu, color: Colors.white, size: getProportionateText(40),)
+
     ],
     centerTitle: true,
     bottom: PreferredSize(
@@ -27,7 +24,10 @@ getHomeAppBar(){
         ],
       ),
     ),
-    leading: Icon(Icons.menu, color: Colors.white, size: getProportionateText(40),),
+    leading: Container(
+      margin: EdgeInsets.only(top: getProportionateScreenHeight(10)),
+      child: CircularBorderImage(getProportionateScreenHeight(10), getProportionateScreenWidth(50), Colors.white, getProportionateScreenWidth(2.0), "assets/images/arabMan.png"),
+    ),
     shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30), bottomRight: Radius.circular(30))
     ),
@@ -40,24 +40,26 @@ class AttendanceTimeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: getProportionateScreenHeight(90),
+      height: getProportionateScreenHeight(85),
       width: SizeConfig.screenWidth*0.95,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
           color: Color(0xFFFFC14F)
       ),
       child: Row(
+        textDirection: TextDirection.ltr,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           SizedBox(width:getProportionateScreenWidth(3)),
           Container(
-            height: getProportionateScreenHeight(75),
+            height: getProportionateScreenHeight(80),
             width: SizeConfig.screenWidth*0.56,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(45),
                 color: Color(0xFF161D6F)
             ),
             child: Row(
+              textDirection: TextDirection.ltr,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Column(
@@ -65,16 +67,18 @@ class AttendanceTimeWidget extends StatelessWidget {
                   children: [
                     Text("موعد الإنصراف", style: TextStyle(color: Color(0xFFFFC14F), fontSize: getProportionateText(20)), ),
                     Row(
+                      textDirection: TextDirection.ltr,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.baseline,
                       textBaseline: TextBaseline.alphabetic,
                       children: [
-                        Text("مساء", style: TextStyle(color: Colors.white, fontSize: getProportionateText(15))),
-                        Text("10:00", style: TextStyle(color: Colors.white, fontSize: getProportionateText(20)))
+                        Text("مساء", style: TextStyle(color: Colors.white, fontSize: getProportionateText(15), height: 1)),
+                        Text("10:00", style: TextStyle(color: Colors.white, fontSize: getProportionateText(20), height: 1))
                       ],
                     )
                   ],
                 ),
-                SizedBox(width: getProportionateScreenWidth(20),),
+                SizedBox(width: getProportionateScreenWidth(10),),
                 AppAssetsImage(getProportionateScreenHeight(20), getProportionateScreenWidth(20), "assets/images/left_arrows.png")
               ],
             ),
@@ -85,11 +89,12 @@ class AttendanceTimeWidget extends StatelessWidget {
             children: [
               Text("موعد الحضور", style: TextStyle(color: Color(0xFF161D6F), fontSize: getProportionateText(20)), ),
               Row(
+                textDirection: TextDirection.ltr,
                 textBaseline: TextBaseline.alphabetic,
                 crossAxisAlignment: CrossAxisAlignment.baseline,
                 children: [
-                  Text("صباحاً", style: TextStyle(color: Colors.white, fontSize: getProportionateText(15))),
-                  Text("10:00", style: TextStyle(color: Colors.white, fontSize: getProportionateText(20)))
+                  Text("صباحاً", style: TextStyle(color: Colors.white, fontSize: getProportionateText(15), height: 1)),
+                  Text("10:00", style: TextStyle(color: Colors.white, fontSize: getProportionateText(20), height: 1))
                 ],
               )
             ],

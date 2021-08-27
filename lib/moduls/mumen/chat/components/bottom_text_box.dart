@@ -18,8 +18,10 @@ class BottomTextBox extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
+          textDirection: TextDirection.ltr,
           children: [
             Row(
+              textDirection: TextDirection.rtl,
               children: [
                 Icon(Icons.camera_alt_outlined, color: AppColors.darkBlueFontColor, size: getProportionateText(28), ),
                 Icon(Icons.add_circle_outlined, color: AppColors.darkBlueFontColor, size: getProportionateText(28), ),

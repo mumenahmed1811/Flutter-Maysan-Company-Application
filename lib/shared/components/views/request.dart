@@ -5,6 +5,7 @@ import 'package:flutter_demoui2/shared/components/size_config.dart';
 
 
 
+// ignore: must_be_immutable
 class Request extends StatelessWidget {
   Request( this.iconDir, this.title, this.imageHeight , this.imageWidth);
 
@@ -18,7 +19,7 @@ class Request extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(top: getProportionateScreenHeight(10)),
-      height: SizeConfig.screenHeight * 0.15,
+      height: SizeConfig.screenHeight * 0.2,
       width: SizeConfig.screenWidth * 0.4,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),

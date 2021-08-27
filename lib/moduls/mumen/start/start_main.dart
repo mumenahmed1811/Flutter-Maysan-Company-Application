@@ -5,6 +5,8 @@ import 'package:flutter_demoui2/shared/components/size_config.dart';
 import 'package:flutter_demoui2/shared/components/views/image.dart';
 import 'package:flutter_demoui2/shared/styles/colors.dart';
 
+import 'components/login_type_logo.dart';
+
 class StartMain extends StatelessWidget {
   const StartMain({Key? key}) : super(key: key);
 
@@ -19,13 +21,14 @@ class StartMain extends StatelessWidget {
           children: [
             Padding(
                 padding: EdgeInsets.only(top: getProportionateScreenHeight(75)),
-                child: AppAssetsImage(getProportionateScreenHeight(350), SizeConfig.screenWidth, "assets/images/logo.png"),
+                child: AppAssetsImage(getProportionateScreenHeight(350), SizeConfig.screenWidth * 0.9, "assets/images/logo.png"),
             ),
             Stack(
 
               children: [
                 //White background
-                AppAssetsImage(getProportionateScreenHeight(200), SizeConfig.screenWidth, "assets/images/Path 1.png"),
+                AppAssetsImage(getProportionateScreenHeight(220), SizeConfig.screenWidth, "assets/images/Path 1.png"),
+                // ignore: duplicate_ignore
                 // ignore: prefer_const_constructors
 
                 Positioned.fill(
@@ -40,6 +43,7 @@ class StartMain extends StatelessWidget {
                           height: getProportionateScreenHeight(125),
                           width: SizeConfig.screenWidth * 0.9,
                           child: Row(
+                            textDirection: TextDirection.ltr,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               LoginTypeLogo("assets/images/edara.png", "الإدارة", (){}),
@@ -60,29 +64,5 @@ class StartMain extends StatelessWidget {
     );
   }
 }
-class LoginTypeLogo extends StatelessWidget {
 
-  String imgDir;
-  String txt;
-  VoidCallback fun;
-
-  LoginTypeLogo(this.imgDir, this.txt, this.fun);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: getProportionateScreenHeight(125),
-      width: getProportionateScreenWidth(75),
-      child: Column(
-        children: [
-          InkWell(
-            child: AppAssetsImage(getProportionateScreenHeight(75), getProportionateScreenWidth(75), imgDir),
-            onTap: fun,
-          ),
-          Text(txt, style: TextStyle(fontSize: getProportionateText(20)),)
-        ],
-      ),
-    );
-  }
-}
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class AppAssetsImage extends StatelessWidget {
   double height;
   double width;
@@ -21,6 +22,7 @@ class AppAssetsImage extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class CircularBorderImage extends StatelessWidget {
 
   double height;
@@ -55,6 +57,7 @@ class CircularBorderImage extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class CircularUnborderImage extends StatelessWidget {
 
   double height;
@@ -83,6 +86,7 @@ class CircularUnborderImage extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class RoundedUnborderedImage extends StatelessWidget {
 
   double height;

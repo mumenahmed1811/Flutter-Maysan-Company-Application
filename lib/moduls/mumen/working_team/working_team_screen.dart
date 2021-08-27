@@ -24,6 +24,7 @@ class _WorkingTeamScreenState extends State<WorkingTeamScreen> {
     EmployeeItem("محمود هلال", "مهندس برمجيات"),
   ];
 
+  // ignore: unused_field
   int _cIndex = 0;
 
 

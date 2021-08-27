@@ -18,9 +18,11 @@ getChatppBar(BuildContext context){
         child: Column(
           children: [
             Row(
+              textDirection: TextDirection.ltr,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
+                  textDirection: TextDirection.ltr,
                   children: [
                     VoiceCallBtn("assets/images/white_call.png"),
                     SizedBox(width: SizeConfig.screenWidth*0.05,),
@@ -35,13 +37,15 @@ getChatppBar(BuildContext context){
         ),
       ),
     ),
-    leading: Icon(Icons.menu, color: Colors.white, size: getProportionateText(40),),
+    actions: [Icon(Icons.menu, color: Colors.white, size: getProportionateText(40),)],
+    //leading: ,
     shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30), bottomRight: Radius.circular(30))
     ),
   );
 }
 
+// ignore: must_be_immutable
 class EmployeeImage extends StatelessWidget {
 
   EmployeeImage(this.dir, this.title, this.status);
@@ -69,6 +73,7 @@ class EmployeeImage extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class VoiceCallBtn extends StatelessWidget {
   VoiceCallBtn(this.dir);
 
@@ -93,6 +98,7 @@ class VoiceCallBtn extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class VideoCallBtn extends StatelessWidget {
   VideoCallBtn(this.dir);
 

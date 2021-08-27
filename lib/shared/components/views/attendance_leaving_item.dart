@@ -1,4 +1,4 @@
-import 'dart:ffi';
+
 
 import 'package:flutter/material.dart';
 import 'package:flutter_demoui2/shared/components/size_config.dart';
@@ -7,6 +7,7 @@ import 'package:flutter_demoui2/shared/components/size_config.dart';
 import 'button.dart';
 import 'image.dart';
 
+// ignore: must_be_immutable
 class AttendanceLeavingItem extends StatelessWidget {
   AttendanceLeavingItem(this.desc, this.btnText, this.fun);
 

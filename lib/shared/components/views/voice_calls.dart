@@ -5,6 +5,7 @@ import 'package:flutter_demoui2/shared/components/size_config.dart';
 
 import 'image.dart';
 
+// ignore: must_be_immutable
 class IncomingCallLerLogo extends StatelessWidget {
   IncomingCallLerLogo(this.dir);
 
@@ -37,6 +38,7 @@ class IncomingCallLerLogo extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class VoiceCallButton extends StatelessWidget {
 
   IconData icon;

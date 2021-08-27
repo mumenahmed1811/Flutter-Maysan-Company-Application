@@ -4,6 +4,7 @@ import 'package:flutter_demoui2/shared/components/size_config.dart';
 import 'package:flutter_demoui2/shared/components/views/image.dart';
 import 'package:flutter_demoui2/shared/styles/colors.dart';
 
+// ignore: must_be_immutable
 class EmployeeItem extends StatelessWidget {
   EmployeeItem(this.employeeName, this.emplyeeRole);
 
@@ -23,8 +24,10 @@ class EmployeeItem extends StatelessWidget {
       child: Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          textDirection: TextDirection.ltr,
           children: [
             Row(
+              textDirection: TextDirection.ltr,
               children: [
                 EmployeeItemBtn("assets/images/yellow_chat.png", "مراسلة"),
                 SizedBox(width: getProportionateScreenWidth(10),),
@@ -35,6 +38,7 @@ class EmployeeItem extends StatelessWidget {
             ),
             Expanded(
               child: Row(
+                textDirection: TextDirection.ltr,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Column(
@@ -56,6 +60,7 @@ class EmployeeItem extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class EmployeeItemBtn extends StatelessWidget {
 
   EmployeeItemBtn(this.dir, this.title);

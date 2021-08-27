@@ -21,7 +21,10 @@ getAttendanceAppBar(String appbarTitle){
         ],
       ),
     ),
-    leading: Icon(Icons.menu, color: Colors.white, size: getProportionateText(38),),
+    actions: [
+      Icon(Icons.menu, color: Colors.white, size: getProportionateText(38),)
+    ],
+    //leading: ,
     shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30), bottomRight: Radius.circular(30))
     ),
