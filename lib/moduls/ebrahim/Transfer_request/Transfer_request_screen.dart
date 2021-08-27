@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_demoui2/moduls/ebrahim/transfer_request_within_the_administration/transfer_request_within_the_administration_screen.dart';
 import 'package:flutter_demoui2/shared/components/components.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -27,8 +28,11 @@ class TransferRequestScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
            
-                GetItem( textTop: 'طلب نقل داخل ادارة', textBottom: 'يمكنك التقدم من هنا لطلب النقل الي إدارة اخري',),
-                GetItem( textTop: 'طلب نقل داخل مشروع', textBottom: 'يمكنك طلب نقل داخل مشروع الي مشروع',),
+                GetItem( textTop: 'طلب نقل داخل ادارة', textBottom: 'يمكنك التقدم من هنا لطلب النقل الي إدارة اخري',fun: (){
+                  Navigator.of(context)
+          .pushReplacement(MaterialPageRoute(builder: (_) => TransferRequestWithinTheAdministrationScreen()));
+                },),
+                GetItem( textTop: 'طلب نقل داخل مشروع', textBottom: 'يمكنك طلب نقل داخل مشروع الي مشروع',fun: (){},),
                 
                 
             ],

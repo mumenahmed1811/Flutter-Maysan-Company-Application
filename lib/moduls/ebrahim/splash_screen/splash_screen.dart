@@ -1,7 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_demoui2/moduls/ebrahim/login&register/login_screen.dart';
+
+import 'package:flutter_demoui2/moduls/mumen/start/start_main.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -15,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(Duration(seconds: 3), () {
       Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (_) => LoginScreen()));
+          .pushReplacement(MaterialPageRoute(builder: (_) => StartMain()));
     });
   }
 

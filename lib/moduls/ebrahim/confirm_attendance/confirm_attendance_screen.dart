@@ -29,7 +29,7 @@ class ConfirmAttendanceScreen extends StatelessWidget {
               height: 30,
             ),
             Text(
-              'تسجيل الحضور',
+              'تسجيل الانصراف',
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 60,

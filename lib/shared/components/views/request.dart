@@ -38,7 +38,8 @@ class Request extends StatelessWidget {
               )
             ),
           ),
-          Text(title, style: TextStyle(color: Color(0xFF161D6F), fontSize: getProportionateText(22)), textAlign: TextAlign.center,),
+          SizedBox(height:15),
+          Text(title, style: TextStyle(color: Color(0xFF161D6F), fontSize: getProportionateText(22),height: 1), textAlign: TextAlign.center,),
         ],
       ),
     );

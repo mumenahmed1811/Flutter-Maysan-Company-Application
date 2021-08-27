@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demoui2/moduls/ebrahim/query/query_screen.dart';
 import 'package:flutter_demoui2/shared/components/components.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -252,7 +253,10 @@ class _RequestsResignationScreenState extends State<RequestsResignationScreen> {
                         borderRadius:BorderRadius.circular(35),
                         child: MaterialButton(
                           minWidth: 200,
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context)
+          .pushReplacement(MaterialPageRoute(builder: (_) => QueryScreen()));
+                          },
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             

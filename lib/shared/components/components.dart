@@ -2,22 +2,20 @@ import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-
-
 class GetItem extends StatelessWidget {
   final String textTop;
   final String textBottom;
-
+  final VoidCallback fun;
   const GetItem({
     Key? key,
     required this.textTop,
-    required this.textBottom,
+    required this.textBottom, required this.fun,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: fun,
       child: Padding(
         padding: const EdgeInsets.only(right: 15, left: 15, top: 5, bottom: 5),
         child: Card(

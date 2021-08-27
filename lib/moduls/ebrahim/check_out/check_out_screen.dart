@@ -1,9 +1,25 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_demoui2/moduls/ebrahim/confirm_attendance/confirm_attendance_screen.dart';
 import 'package:flutter_demoui2/shared/components/components.dart';
 
 
-class CheckOutScreen extends StatelessWidget {
+class CheckOutScreen extends StatefulWidget {
 
+  @override
+  _CheckOutScreenState createState() => _CheckOutScreenState();
+}
+
+class _CheckOutScreenState extends State<CheckOutScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 3), () {
+      Navigator.of(context)
+          .pushReplacement(MaterialPageRoute(builder: (_) => ConfirmAttendanceScreen()));
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

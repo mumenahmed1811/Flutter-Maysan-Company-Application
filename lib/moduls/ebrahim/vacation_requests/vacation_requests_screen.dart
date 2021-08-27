@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demoui2/moduls/ebrahim/annual_leave_request/annual_leave_request_screen.dart';
 import 'package:flutter_demoui2/shared/components/components.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -27,9 +28,12 @@ class VacationRequestsScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-                GetItem(textTop: 'طلب إجازة سنوية', textBottom: 'يمكنك التقدم من هنا لطلب إجازة سنوية'),
-                GetItem(textTop: 'طلب إجازة اضطرارية', textBottom: 'يمكنك التقدم من هنا لطلب إجازة اضطرارية'),
-                GetItem(textTop: 'طلب إجازة مرضـيــة', textBottom: 'يمكنك التقدم من هنا لطلب إجازة مرضية'),
+                GetItem(textTop: 'طلب إجازة سنوية', textBottom: 'يمكنك التقدم من هنا لطلب إجازة سنوية',fun: (){
+                  Navigator.of(context)
+          .pushReplacement(MaterialPageRoute(builder: (_) => AnnualLeaveRequestScreen()));
+                }),
+                GetItem(textTop: 'طلب إجازة اضطرارية', textBottom: 'يمكنك التقدم من هنا لطلب إجازة اضطرارية',fun: (){}),
+                GetItem(textTop: 'طلب إجازة مرضـيــة', textBottom: 'يمكنك التقدم من هنا لطلب إجازة مرضية',fun: (){}),
                 
                 
             ],

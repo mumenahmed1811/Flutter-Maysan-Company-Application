@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demoui2/moduls/ebrahim/query_rejection/query_rejection_screen.dart';
 import 'package:flutter_demoui2/shared/components/components.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -309,7 +310,10 @@ class _AnnualLeaveRequestScreenState extends State<AnnualLeaveRequestScreen> {
                                 borderRadius: BorderRadius.circular(35),
                                 child: MaterialButton(
                                   minWidth: 200,
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.of(context)
+          .pushReplacement(MaterialPageRoute(builder: (_) => QueryScreenRejection()));
+                                  },
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     mainAxisSize: MainAxisSize.min,

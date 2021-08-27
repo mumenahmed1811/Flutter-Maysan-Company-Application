@@ -18,7 +18,7 @@ class AttendanceLeavingItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: SizeConfig.screenHeight * 0.18,
+      height: SizeConfig.screenHeight * 0.2,
       width: SizeConfig.screenWidth * 0.4,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
@@ -29,7 +29,7 @@ class AttendanceLeavingItem extends StatelessWidget {
         children: [
           AppAssetsImage(getProportionateScreenHeight(40), getProportionateScreenWidth(40), "assets/images/blue_fingerprint.png"),
           Text(desc, style: TextStyle(color: Color(0xFF161D6F), fontSize: 15), textAlign: TextAlign.center,),
-          AppTextButton(getProportionateScreenHeight(30), getProportionateScreenWidth(120), 20, btnText, getProportionateText(8), fun)
+          AppTextButton(getProportionateScreenHeight(40), getProportionateScreenWidth(120), 20, btnText, getProportionateText(8), fun)
         ],
       ),
     );

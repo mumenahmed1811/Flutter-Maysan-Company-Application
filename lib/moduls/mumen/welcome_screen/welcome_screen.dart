@@ -1,6 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_demoui2/moduls/mumen/home/home.dart';
 import 'package:flutter_demoui2/shared/components/size_config.dart';
 import 'package:flutter_demoui2/shared/components/views/button.dart';
 import 'package:flutter_demoui2/shared/components/views/image.dart';
@@ -34,7 +35,11 @@ class WelcomeScreen extends StatelessWidget {
                       style: TextStyle(color: AppColors.whiteFontColor, fontSize: getProportionateText(18), ),
                       textAlign: TextAlign.center
                   ),
-                  AppTextButton(getProportionateScreenHeight(50), SizeConfig.screenWidth*0.7 , 20,  "الإنتقال لبدأ مهام عملي", getProportionateText(17), (){})
+                  AppTextButton(getProportionateScreenHeight(50), SizeConfig.screenWidth*0.7 , 20,  "الإنتقال لبدأ مهام عملي", getProportionateText(17), ()
+                  {
+                    Navigator.of(context)
+                    .pushReplacement(MaterialPageRoute(builder: (_) => HomeScreen()));
+                  })
 
                 ],
             )

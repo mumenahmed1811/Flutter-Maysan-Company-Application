@@ -3,6 +3,12 @@ import 'dart:ui';
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter_demoui2/moduls/ebrahim/check_out/check_out_screen.dart';
+// ignore: unused_import
+import 'package:flutter_demoui2/moduls/ebrahim/confirm_attendance/confirm_attendance_screen.dart';
+import 'package:flutter_demoui2/moduls/mumen/attendance_record/attendance_registration_screen.dart';
+import 'package:flutter_demoui2/moduls/mumen/requests/requests_screen.dart';
+import 'package:flutter_demoui2/moduls/mumen/working_team/working_team_screen.dart';
 import 'package:flutter_demoui2/shared/components/appbars/home_appbar.dart';
 import 'package:flutter_demoui2/shared/components/components.dart';
 import 'package:flutter_demoui2/shared/components/size_config.dart';
@@ -63,7 +69,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                   width: getProportionateScreenWidth(120),
                                   height: getProportionateScreenHeight(40),
                                   child: TextButton(
-                                      onPressed: (){showCheckoutDialog(context, "تسجيل الإنصراف");},
+                                      onPressed: (){showCheckoutDialog(context, "تسجيل الإنصراف",(){
+                                        Navigator.of(context)
+                                        .pushReplacement(MaterialPageRoute(builder: (_) => CheckOutScreen()));
+                                      });},
                                       child: Center(child: Text("تسجيل الإنصراف", style: TextStyle(color: AppColors.bgColor, fontSize: getProportionateText(10)))),
                                       style: TextButton.styleFrom(
                                           backgroundColor: Colors.white,
@@ -92,7 +101,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                   width: getProportionateScreenWidth(120),
                                   height: getProportionateScreenHeight(40),
                                   child: TextButton(
-                                      onPressed: (){showCheckoutDialog(context, "تسجيل الحضور");},
+                                      onPressed: (){showCheckoutDialog(context, "تسجيل الحضور",(){
+                                        Navigator.of(context)
+                                        .pushReplacement(MaterialPageRoute(builder: (_) => AttendanceRecordScreen()));
+                                      });},
                                       child: Center(child: Text("تسجيل الحضور", style: TextStyle(color: AppColors.bgColor, fontSize: getProportionateText(10)))),
                                       style: TextButton.styleFrom(
                                           backgroundColor: Colors.white,
@@ -118,8 +130,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       textDirection: TextDirection.ltr,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Request("assets/images/target.png", "المهام", getProportionateScreenHeight(52),getProportionateScreenWidth(68),),
-                        Request("assets/images/choices.png", "الطلبات",  getProportionateScreenHeight(65),getProportionateScreenWidth(50)),
+                        InkWell(child: Request("assets/images/target.png", "المهام", getProportionateScreenHeight(52),getProportionateScreenWidth(68),),onTap: (){},),
+                        InkWell(child: Request("assets/images/choices.png", "الطلبات",  getProportionateScreenHeight(65),getProportionateScreenWidth(50)),onTap: (){
+                          Navigator.of(context)
+                                        .pushReplacement(MaterialPageRoute(builder: (_) => RequestsScreen()));
+                        },),
                       ],
                     ),
                     SizedBox(height: getProportionateScreenHeight(20),),
@@ -127,8 +142,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       textDirection: TextDirection.ltr,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Request("assets/images/network.png", "فريق العمل", getProportionateScreenHeight(50),getProportionateScreenWidth(50)),
-                        Request("assets/images/chat_2.png", "سجل الدردشات", getProportionateScreenHeight(50),getProportionateScreenWidth(50)),
+                        InkWell(child: Request("assets/images/network.png", "فريق العمل", getProportionateScreenHeight(50),getProportionateScreenWidth(50)),onTap: (){
+                          Navigator.of(context)
+                                        .pushReplacement(MaterialPageRoute(builder: (_) => WorkingTeamScreen()));
+                        },),
+                        InkWell(child: Request("assets/images/chat_2.png", "سجل الدردشات", getProportionateScreenHeight(50),getProportionateScreenWidth(50)),onTap: (){},),
                       ],
                     ),
                   ],
@@ -143,7 +161,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-showCheckoutDialog(BuildContext context1, String title){
+showCheckoutDialog(BuildContext context1, String title,VoidCallback fun){
   print(title);
   showDialog(context: context1, builder: (BuildContext context){
     return BackdropFilter(
@@ -153,6 +171,7 @@ showCheckoutDialog(BuildContext context1, String title){
               borderRadius: BorderRadius.circular(20.0),
               side: BorderSide(color: Colors.white, width: getProportionateScreenWidth(5.0))
           ),
+      
           backgroundColor: Color(0xFFFFC14F),
           child: Container(
             height: getProportionateScreenHeight(350),
@@ -163,7 +182,9 @@ showCheckoutDialog(BuildContext context1, String title){
                 AppAssetsImage(getProportionateScreenHeight(150), getProportionateScreenWidth(150), "assets/images/fingerprint_2.png"),
                 Text("حان موعد"),
                 Text(title),
-                AppTextButton(getProportionateScreenHeight(40), getProportionateScreenWidth(150), 20, title, getProportionateText(16), (){})
+                AppTextButton(getProportionateScreenHeight(40), getProportionateScreenWidth(150), 20, title, getProportionateText(16), 
+                    fun
+                )
               ],
             ),
           ),

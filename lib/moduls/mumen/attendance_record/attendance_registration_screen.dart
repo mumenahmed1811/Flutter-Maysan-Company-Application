@@ -1,5 +1,8 @@
 
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_demoui2/moduls/mumen/attendance_record_success/attendance_record_success_Screen.dart';
 import 'package:flutter_demoui2/shared/components/appbars/attendance_appbar.dart';
 import 'package:flutter_demoui2/shared/components/components.dart';
 import 'package:flutter_demoui2/shared/components/size_config.dart';
@@ -15,7 +18,14 @@ class AttendanceRecordScreen extends StatefulWidget {
 
 class _AttendanceRecordScreenState extends State<AttendanceRecordScreen> {
 
-
+@override
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 3), () {
+      Navigator.of(context)
+          .pushReplacement(MaterialPageRoute(builder: (_) => AttendanceRecordSuccessScreen()));
+    });
+  }
   String title1 = "برجاء وضع بصمتك \n لتأكيد حضورك\n للدوام";
   String title2 = "يرجي وضع البصمة الخاصة بالموظف وليس \n شخص اخر حتى نقوم بالتاكد من هوية المستخدم ";
 

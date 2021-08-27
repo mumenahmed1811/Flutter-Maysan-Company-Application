@@ -1,13 +1,30 @@
 
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_demoui2/moduls/mumen/welcome_screen/welcome_screen.dart';
 import 'package:flutter_demoui2/shared/components/size_config.dart';
 import 'package:flutter_demoui2/shared/components/views/image.dart';
 import 'package:flutter_demoui2/shared/styles/colors.dart';
 
-class FingerprintVerificationScreen extends StatelessWidget {
+class FingerprintVerificationScreen extends StatefulWidget {
   const FingerprintVerificationScreen({Key? key}) : super(key: key);
 
+  @override
+  _FingerprintVerificationScreenState createState() => _FingerprintVerificationScreenState();
+}
+
+class _FingerprintVerificationScreenState extends State<FingerprintVerificationScreen> {
+   @override
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 3), () {
+      Navigator.of(context)
+          .pushReplacement(MaterialPageRoute(builder: (_) => WelcomeScreen()));
+    });
+  }
   final String txt1 = "برجاء وضع بصمتك\n للتأكد من هوية\n المستخدم";
+
   final String txt2 = "براجاء وضع البصمة الخاصة بالمستخدم و ليس\n شخص آخر للتأكد من هوية المستخدم";
 
   @override

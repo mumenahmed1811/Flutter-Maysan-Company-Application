@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demoui2/moduls/mumen/fingetprint_verification/fingerprint_verification.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 // ignore: must_be_immutable
@@ -92,6 +93,7 @@ class LoginScreen extends StatelessWidget {
                     controller: passwordController,
                     keyboardType: TextInputType.visiblePassword,
                     obscureText: false,
+                    cursorColor: HexColor('#3949AB'),
                     textAlign: TextAlign.center,
                     enabled: true,
                     style: TextStyle(
@@ -129,7 +131,10 @@ class LoginScreen extends StatelessWidget {
                     borderRadius:BorderRadius.circular(10),
                     child: MaterialButton(
                       minWidth: 150,
-                      onPressed: () {},
+                      onPressed: () {
+                         Navigator.of(context)
+          .pushReplacement(MaterialPageRoute(builder: (_) => FingerprintVerificationScreen()));
+                      },
                       child: Padding(
                         padding: const EdgeInsets.only(top:3),
                         child: Text(

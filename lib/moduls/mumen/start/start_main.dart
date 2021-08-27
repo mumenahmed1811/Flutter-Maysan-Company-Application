@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_demoui2/moduls/ebrahim/login/login_screen.dart';
 import 'package:flutter_demoui2/shared/components/size_config.dart';
 import 'package:flutter_demoui2/shared/components/views/image.dart';
 import 'package:flutter_demoui2/shared/styles/colors.dart';
@@ -46,9 +47,12 @@ class StartMain extends StatelessWidget {
                             textDirection: TextDirection.ltr,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              LoginTypeLogo("assets/images/edara.png", "الإدارة", (){}),
-                              LoginTypeLogo("assets/images/3omla2.png", "العملاء", (){}),
-                              LoginTypeLogo("assets/images/3amlen.png", "العاملين", (){}),
+                              LoginTypeLogo("assets/images/edara.png", "الإدارة", (){ Navigator.of(context)
+          .pushReplacement(MaterialPageRoute(builder: (_) => LoginScreen()));}),
+                              LoginTypeLogo("assets/images/3omla2.png", "العملاء", (){ Navigator.of(context)
+          .pushReplacement(MaterialPageRoute(builder: (_) => LoginScreen()));}),
+                              LoginTypeLogo("assets/images/3amlen.png", "العاملين", (){ Navigator.of(context)
+          .pushReplacement(MaterialPageRoute(builder: (_) => LoginScreen()));}),
                             ],
                           ),
                         )

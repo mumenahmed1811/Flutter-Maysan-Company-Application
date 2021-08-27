@@ -12,11 +12,10 @@ ThemeData defaultTheme = ThemeData(
 
   scaffoldBackgroundColor: HexColor('#3949AB'),
   appBarTheme: AppBarTheme(
-    //titleSpacing: 20.0,
     backwardsCompatibility: false,
     systemOverlayStyle: SystemUiOverlayStyle(
-      statusBarColor: Colors.grey[300],
-      statusBarIconBrightness: Brightness.dark,
+      statusBarColor: Color(0xFFFFC14F),
+      statusBarIconBrightness: Brightness.light,
     ),
   ),
 );

@@ -9,7 +9,7 @@ class AppTextButton extends StatelessWidget {
   double radius;
   String txt;
   double fontSize;
-  dynamic  fun;
+  VoidCallback  fun;
 
   AppTextButton(this.height, this.width, this.radius, this.txt, this.fontSize, this.fun);
 
@@ -19,7 +19,7 @@ class AppTextButton extends StatelessWidget {
       width: width,
       height: height,
       child: TextButton(
-          onPressed: (){fun;},
+          onPressed: fun,
           child: Center(child: Text(txt, style: TextStyle(color: AppColors.bgColor, fontSize: fontSize))),
           style: TextButton.styleFrom(
               backgroundColor: Colors.white,
