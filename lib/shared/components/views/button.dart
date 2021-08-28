@@ -2,14 +2,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demoui2/shared/styles/colors.dart';
 
-// ignore: must_be_immutable
 class AppTextButton extends StatelessWidget {
   double height;
   double width;
   double radius;
   String txt;
   double fontSize;
-  VoidCallback  fun;
+  dynamic  fun;
 
   AppTextButton(this.height, this.width, this.radius, this.txt, this.fontSize, this.fun);
 
@@ -19,7 +18,7 @@ class AppTextButton extends StatelessWidget {
       width: width,
       height: height,
       child: TextButton(
-          onPressed: fun,
+          onPressed: (){fun;},
           child: Center(child: Text(txt, style: TextStyle(color: AppColors.bgColor, fontSize: fontSize))),
           style: TextButton.styleFrom(
               backgroundColor: Colors.white,
@@ -33,7 +32,6 @@ class AppTextButton extends StatelessWidget {
   }
 }
 
-// ignore: must_be_immutable
 class RoundIconButton extends StatelessWidget {
   RoundIconButton(this.btnHeight, this.btnWidth, this.btnColor, this.icon, this.iconHeight, this.iconWidth, this.iconColor, this.radius);
   double btnHeight;

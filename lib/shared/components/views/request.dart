@@ -1,11 +1,9 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_demoui2/shared/components/size_config.dart';
+
+import '../size_config.dart';
 
 
-
-
-// ignore: must_be_immutable
 class Request extends StatelessWidget {
   Request( this.iconDir, this.title, this.imageHeight , this.imageWidth);
 
@@ -38,8 +36,7 @@ class Request extends StatelessWidget {
               )
             ),
           ),
-          SizedBox(height:15),
-          Text(title, style: TextStyle(color: Color(0xFF161D6F), fontSize: getProportionateText(22),height: 1), textAlign: TextAlign.center,),
+          Text(title, style: TextStyle(color: Color(0xFF161D6F), fontSize: getProportionateText(22)), textAlign: TextAlign.center,),
         ],
       ),
     );

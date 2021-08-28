@@ -1,10 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_demoui2/moduls/ebrahim/Requests%20(exit%20-%20resignation)/Requests_resignation_screen.dart';
-import 'package:flutter_demoui2/moduls/ebrahim/Transfer_request/Transfer_request_screen.dart';
-// ignore: unused_import
-import 'package:flutter_demoui2/moduls/ebrahim/transfer_request_within_the_administration/transfer_request_within_the_administration_screen.dart';
-import 'package:flutter_demoui2/moduls/ebrahim/vacation_requests/vacation_requests_screen.dart';
 import 'package:flutter_demoui2/shared/components/appbars/titled_only_app_bar.dart';
 import 'package:flutter_demoui2/shared/components/components.dart';
 import 'package:flutter_demoui2/shared/components/size_config.dart';
@@ -36,14 +31,8 @@ class _RequestsScreenState extends State<RequestsScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        InkWell(child: Request("assets/images/target.png", "طلبات الإجازة", getProportionateScreenHeight(50),getProportionateScreenWidth(50)),onTap: (){
-                           Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (_) => VacationRequestsScreen()));
-                        },),
-                        InkWell(child: Request("assets/images/choices.png", "طلبات (الخروج- الاستقالة)", getProportionateScreenHeight(50),getProportionateScreenWidth(50)),onTap: (){
-                          Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (_) => RequestsResignationScreen()));
-                        },),
+                        Request("assets/images/target.png", "المهام", getProportionateScreenHeight(50),getProportionateScreenWidth(50)),
+                        Request("assets/images/choices.png", "الطلبات", getProportionateScreenHeight(50),getProportionateScreenWidth(50)),
                       ],
                     ),
                     SizedBox(height: getProportionateScreenHeight(20),),
@@ -51,13 +40,8 @@ class _RequestsScreenState extends State<RequestsScreen> {
                       textDirection: TextDirection.ltr,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        InkWell(child: Request("assets/images/network.png", "طلبات عامة", getProportionateScreenHeight(50),getProportionateScreenWidth(50)),onTap: (){
-                           
-                        },),
-                        InkWell(child: Request("assets/images/chat_2.png", "طلبات النقل", getProportionateScreenHeight(50),getProportionateScreenWidth(50)),onTap: (){
-                          Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (_) => TransferRequestScreen()));
-                        },),
+                        Request("assets/images/network.png", "فريق العمل", getProportionateScreenHeight(50),getProportionateScreenWidth(50)),
+                        Request("assets/images/chat_2.png", "سجل الدردشات", getProportionateScreenHeight(50),getProportionateScreenWidth(50)),
                       ],
                     ),
                   ],
