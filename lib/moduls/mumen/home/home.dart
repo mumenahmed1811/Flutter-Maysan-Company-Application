@@ -48,17 +48,18 @@ class _HomeScreenState extends State<HomeScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
-                          height: SizeConfig.screenHeight * 0.2,
-                          width: SizeConfig.screenWidth * 0.4,
+                          padding: EdgeInsets.all(getProportionateScreenHeight(20)),
+                          height: getProportionateScreenHeight(180),
+                          width: getProportionateScreenWidth(150),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
                               color: Color(0xFFFFC14F)
                           ),
                           child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               AppAssetsImage(getProportionateScreenHeight(40), getProportionateScreenWidth(40), "assets/images/blue_fingerprint.png"),
-                              Text("سجل إنصرافك الان عن طريق التبصيم", style: TextStyle(color: Color(0xFF161D6F), fontSize: getProportionateText(13)), textAlign: TextAlign.center,),
+                              Text("سجل إنصرافك الان عن طريق التبصيم", style: TextStyle(color: Color(0xFF161D6F), fontSize: getProportionateText(13), height: 1), textAlign: TextAlign.center,),
                               Container(
                                   width: getProportionateScreenWidth(120),
                                   height: getProportionateScreenHeight(40),
@@ -77,17 +78,18 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                         Container(
-                          height: SizeConfig.screenHeight * 0.2,
-                          width: SizeConfig.screenWidth * 0.4,
+                          padding: EdgeInsets.all(getProportionateScreenHeight(20)),
+                          height: getProportionateScreenHeight(180),
+                          width: getProportionateScreenWidth(150),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
                               color: Color(0xFFFFC14F)
                           ),
                           child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               AppAssetsImage(getProportionateScreenHeight(40), getProportionateScreenWidth(40), "assets/images/blue_fingerprint.png"),
-                              Text("سجل حضورك الان عن طريق التبصيم", style: TextStyle(color: Color(0xFF161D6F), fontSize: getProportionateText(13)), textAlign: TextAlign.center,),
+                              Text("سجل حضورك الان عن طريق التبصيم", style: TextStyle(color: Color(0xFF161D6F), fontSize: getProportionateText(13), height: 1), textAlign: TextAlign.center,),
                               Container(
                                   width: getProportionateScreenWidth(120),
                                   height: getProportionateScreenHeight(40),
@@ -113,22 +115,22 @@ class _HomeScreenState extends State<HomeScreen> {
                         //         ),
                       ],
                     ),
-                    SizedBox(height: getProportionateScreenHeight(20),),
+                    SizedBox(height: getProportionateScreenHeight(10),),
                     Row(
                       textDirection: TextDirection.ltr,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Request("assets/images/target.png", "المهام", getProportionateScreenHeight(52),getProportionateScreenWidth(68),),
-                        Request("assets/images/choices.png", "الطلبات",  getProportionateScreenHeight(65),getProportionateScreenWidth(50)),
+                        Request("assets/images/target.png", "المهام", getProportionateScreenHeight(90),getProportionateScreenWidth(95),),
+                        Request("assets/images/choices.png", "الطلبات",  getProportionateScreenHeight(100),getProportionateScreenWidth(70)),
                       ],
                     ),
-                    SizedBox(height: getProportionateScreenHeight(20),),
+                    SizedBox(height: getProportionateScreenHeight(10),),
                     Row(
                       textDirection: TextDirection.ltr,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Request("assets/images/network.png", "فريق العمل", getProportionateScreenHeight(50),getProportionateScreenWidth(50)),
-                        Request("assets/images/chat_2.png", "سجل الدردشات", getProportionateScreenHeight(50),getProportionateScreenWidth(50)),
+                        Request("assets/images/network.png", "فريق العمل", getProportionateScreenHeight(80),getProportionateScreenWidth(80)),
+                        Request("assets/images/chat_2.png", "سجل الدردشات", getProportionateScreenHeight(80),getProportionateScreenWidth(80)),
                       ],
                     ),
                   ],
@@ -163,7 +165,7 @@ showCheckoutDialog(BuildContext context1, String title){
                 AppAssetsImage(getProportionateScreenHeight(150), getProportionateScreenWidth(150), "assets/images/fingerprint_2.png"),
                 Text("حان موعد"),
                 Text(title),
-                AppTextButton(getProportionateScreenHeight(40), getProportionateScreenWidth(150), 20, title, getProportionateText(16), (){})
+                AppTextButton(getProportionateScreenHeight(50), getProportionateScreenWidth(150), 20, title, getProportionateText(16), (){})
               ],
             ),
           ),

@@ -31,17 +31,17 @@ class _RequestsScreenState extends State<RequestsScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Request("assets/images/target.png", "المهام", getProportionateScreenHeight(50),getProportionateScreenWidth(50)),
-                        Request("assets/images/choices.png", "الطلبات", getProportionateScreenHeight(50),getProportionateScreenWidth(50)),
+                        Request("assets/images/target.png", "طلبات الخروج - الإستقالة", getProportionateScreenHeight(90),getProportionateScreenWidth(95)),
+                        Request("assets/images/choices.png", "طلبات الأجازة", getProportionateScreenHeight(100),getProportionateScreenWidth(70)),
                       ],
                     ),
-                    SizedBox(height: getProportionateScreenHeight(20),),
+                    SizedBox(height: getProportionateScreenHeight(10),),
                     Row(
                       textDirection: TextDirection.ltr,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Request("assets/images/network.png", "فريق العمل", getProportionateScreenHeight(50),getProportionateScreenWidth(50)),
-                        Request("assets/images/chat_2.png", "سجل الدردشات", getProportionateScreenHeight(50),getProportionateScreenWidth(50)),
+                        Request("assets/images/target.png", "طلبات عامة", getProportionateScreenHeight(90),getProportionateScreenWidth(95)),
+                        Request("assets/images/target.png", "طلبات النقل", getProportionateScreenHeight(90),getProportionateScreenWidth(95)),
                       ],
                     ),
                   ],

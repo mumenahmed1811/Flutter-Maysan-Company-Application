@@ -49,7 +49,7 @@ class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SizeConfig.init(context);
-    return WorkingTeamScreen();
+    return HomeScreen();
   }
 }
 

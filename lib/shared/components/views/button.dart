@@ -16,10 +16,10 @@ class AppTextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: width,
-      height: height,
+      height: height, // with a font size more than 16 this height can't be less than 50 with text height 2
       child: TextButton(
           onPressed: (){fun;},
-          child: Center(child: Text(txt, style: TextStyle(color: AppColors.bgColor, fontSize: fontSize))),
+          child: Center(child: Text(txt, style: TextStyle(color: AppColors.bgColor, fontSize: fontSize, height: 2), )),
           style: TextButton.styleFrom(
               backgroundColor: Colors.white,
               shape: RoundedRectangleBorder(
