@@ -1,5 +1,8 @@
 
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_demoui2/moduls/mumen/requests/requests_screen.dart';
 import 'package:flutter_demoui2/shared/components/components.dart';
 import 'package:flutter_demoui2/shared/components/size_config.dart';
 import 'package:flutter_demoui2/shared/components/views/image.dart';
@@ -12,6 +15,14 @@ class UnAnsweredVoiceCallCsreen extends StatefulWidget {
 }
 
 class _UnAnsweredVoiceCallCsreenState extends State<UnAnsweredVoiceCallCsreen> {
+
+  @override
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 3), () {
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => RequestsScreen()));
+    });
+  }
 
   String txt1 = "مازن مصطفي";
   String txt2 = "لم يرد علي مكالمتك";

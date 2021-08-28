@@ -1,5 +1,8 @@
 
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_demoui2/moduls/mumen/un_answered_voice_call/un_answered_voice_call_screen.dart';
 import 'package:flutter_demoui2/shared/components/components.dart';
 import 'package:flutter_demoui2/shared/components/size_config.dart';
 import 'package:flutter_demoui2/shared/components/views/voice_calls.dart';
@@ -12,6 +15,15 @@ class OnGoingCallScreen extends StatefulWidget {
 }
 
 class _OnGoingCallScreenState extends State<OnGoingCallScreen> {
+
+  @override
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 3), () {
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => UnAnsweredVoiceCallCsreen()));
+    });
+  }
+
   String txt1 = "مكالمة مع";
   String txt2 = "مازن مصطفي";
 

@@ -1,7 +1,10 @@
 
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_demoui2/models/chat/chatMessageModel.dart';
 import 'package:flutter_demoui2/moduls/ebrahim/chat/componentsChat/message.dart';
+import 'package:flutter_demoui2/moduls/mumen/incoming_call/incoming_call_screen.dart';
 import 'package:flutter_demoui2/shared/components/appbars/chat_appbar.dart';
 import 'package:flutter_demoui2/shared/components/components.dart';
 import 'package:flutter_demoui2/shared/styles/colors.dart';
@@ -16,6 +19,14 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
+
+  @override
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 3), () {
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => IncomingCallScreen()));
+    });
+  }
 
 
   @override
