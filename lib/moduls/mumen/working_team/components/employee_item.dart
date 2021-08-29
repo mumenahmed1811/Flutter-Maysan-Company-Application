@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_demoui2/moduls/mumen/chat/chat_screen.dart';
 import 'package:flutter_demoui2/shared/components/size_config.dart';
 import 'package:flutter_demoui2/shared/components/views/image.dart';
 import 'package:flutter_demoui2/shared/styles/colors.dart';
@@ -29,11 +30,11 @@ class EmployeeItem extends StatelessWidget {
             Row(
               textDirection: TextDirection.ltr,
               children: [
-                EmployeeItemBtn("assets/images/yellow_chat.png", "مراسلة"),
+                EmployeeItemBtn("assets/images/yellow_chat.png", "مراسلة", (){Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => ChatScreen()));}),
                 SizedBox(width: getProportionateScreenWidth(10),),
-                EmployeeItemBtn("assets/images/yellow_phone_call.png", "مكالمة"),
+                EmployeeItemBtn("assets/images/yellow_phone_call.png", "مكالمة", (){Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => ChatScreen()));}),
                 SizedBox(width: getProportionateScreenWidth(10),),
-                EmployeeItemBtn("assets/images/yellow_community.png", "مساعدة")
+                EmployeeItemBtn("assets/images/yellow_community.png", "مساعدة", (){Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => ChatScreen()));})
               ],
             ),
             Expanded(
@@ -63,15 +64,18 @@ class EmployeeItem extends StatelessWidget {
 // ignore: must_be_immutable
 class EmployeeItemBtn extends StatelessWidget {
 
-  EmployeeItemBtn(this.dir, this.title);
+  EmployeeItemBtn(this.dir, this.title, this.fun);
   String dir;
   String title;
+  VoidCallback fun;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        GestureDetector(child: AppAssetsImage(getProportionateScreenHeight(50), SizeConfig.screenWidth*0.1, dir)),
+        GestureDetector(
+            onTap: fun,
+            child: AppAssetsImage(getProportionateScreenHeight(50), SizeConfig.screenWidth*0.1, dir)),
         Text(title, style: TextStyle(color: AppColors.darkBlueFontColor, fontSize: getProportionateText(13)),)
       ],
     );

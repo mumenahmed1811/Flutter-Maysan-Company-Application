@@ -18,12 +18,11 @@ class AttendanceRecordScreen extends StatefulWidget {
 
 class _AttendanceRecordScreenState extends State<AttendanceRecordScreen> {
 
-@override
+  @override
   void initState() {
     super.initState();
     Timer(Duration(seconds: 3), () {
-      Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (_) => AttendanceRecordSuccessScreen()));
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => AttendanceRecordSuccessScreen()));
     });
   }
   String title1 = "برجاء وضع بصمتك \n لتأكيد حضورك\n للدوام";

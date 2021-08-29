@@ -1,13 +1,32 @@
 
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_demoui2/moduls/mumen/ongoing_call/on_going_call_screen.dart';
 import 'package:flutter_demoui2/shared/components/size_config.dart';
 import 'package:flutter_demoui2/shared/components/views/voice_calls.dart';
 import 'package:flutter_demoui2/shared/styles/colors.dart';
 
-class IncomingCallScreen extends StatelessWidget {
+class IncomingCallScreen extends StatefulWidget {
 
   const IncomingCallScreen({Key? key}) : super(key: key);
+
+  @override
+  State<IncomingCallScreen> createState() => _IncomingCallScreenState();
+}
+
+class _IncomingCallScreenState extends State<IncomingCallScreen> {
+
+  @override
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 3), () {
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => OnGoingCallScreen()));
+    });
+  }
+
   final String txt1 = "...إتصال وارد";
+
   final String txt2 = "مازن مصطفي";
 
   @override
