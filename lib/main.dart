@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-
-
-=======
 import 'package:flutter_demoui2/moduls/mumen/home/home.dart';
->>>>>>> c19980af8bcd1d6c308d1b9d9adfc972082ba458
 import 'package:flutter_demoui2/shared/components/size_config.dart';
 import 'package:flutter_demoui2/shared/styles/themes.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 
-<<<<<<< HEAD
+
 // ignore: unused_import
 import 'moduls/ebrahim/Requests (exit - resignation)/Requests_resignation_screen.dart';
 
@@ -18,11 +13,6 @@ import 'moduls/ebrahim/Requests (exit - resignation)/Requests_resignation_screen
 import 'moduls/ebrahim/check_out/check_out_screen.dart';
 
 import 'moduls/ebrahim/splash_screen/splash_screen.dart';
-
-
-
-
-=======
 import 'moduls/mumen/attendance_record/attendance_registration_screen.dart';
 import 'moduls/mumen/attendance_record_success/attendance_record_success_Screen.dart';
 import 'moduls/mumen/chat/chat_screen.dart';
@@ -36,7 +26,7 @@ import 'moduls/mumen/start/start_main.dart';
 import 'moduls/mumen/un_answered_voice_call/un_answered_voice_call_screen.dart';
 import 'moduls/mumen/welcome_screen/welcome_screen.dart';
 import 'moduls/mumen/working_team/working_team_screen.dart';
->>>>>>> c19980af8bcd1d6c308d1b9d9adfc972082ba458
+
 
 void main() {
   runApp(MyApp());
