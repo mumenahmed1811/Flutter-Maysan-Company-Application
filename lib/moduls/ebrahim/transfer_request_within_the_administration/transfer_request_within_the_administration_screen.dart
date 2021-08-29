@@ -1,6 +1,9 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_demoui2/shared/components/components.dart';
-import 'package:hexcolor/hexcolor.dart';
+import 'package:flutter_demoui2/shared/components/size_config.dart';
+import 'package:flutter_demoui2/shared/styles/colors.dart';
+
 
 // ignore: must_be_immutable
 class TransferRequestWithinTheAdministrationScreen extends StatelessWidget {
@@ -14,15 +17,15 @@ class TransferRequestWithinTheAdministrationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          toolbarHeight: 65,
-           title: Text('طلب نقل داخل ادارة',style: TextStyle(color:HexColor('#161D6F'),fontSize: 30,fontWeight: FontWeight.bold ),),
-           backgroundColor: HexColor('#FFC14F'),
+          toolbarHeight: getProportionateScreenHeight(65),
+           title: Text('طلب نقل داخل ادارة',style: TextStyle(color:AppColors.darkBlueFontColor,fontSize: getProportionateText(30),fontWeight: FontWeight.bold ),),
+           backgroundColor: AppColors.yellow,
            centerTitle: true,
            shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30),bottomRight: Radius.circular(30))),
            actions: [
               Padding(
                 padding: const EdgeInsets.only(left: 8),
-                child: Icon(Icons.menu, color: Colors.white, size: 40,),
+                child: Icon(Icons.menu, color:  AppColors.whiteFontColor, size: 40,),
               ),
            ],
          ),
@@ -31,10 +34,10 @@ class TransferRequestWithinTheAdministrationScreen extends StatelessWidget {
           
           child: Container(
            
-            width: 350,
-            height:550,
+            width: getProportionateScreenWidth(350),
+            height:getProportionateScreenHeight(600),
             decoration: BoxDecoration(
-              color: HexColor('#FFC14F'),
+              color: AppColors.yellow,
               borderRadius: BorderRadius.circular(30)
             ),
             child: Padding(
@@ -44,170 +47,184 @@ class TransferRequestWithinTheAdministrationScreen extends StatelessWidget {
                 child: Column(
                   
                   children: [
-                    Container(child: Text('طلب نقل داخل ادارة ',style: TextStyle(color:HexColor('#161D6F'),fontSize:30,height: 1),)),
-                    SizedBox(height: 15,),
+                    Container(child: Text('طلب نقل داخل ادارة ',style: TextStyle(color:AppColors.darkBlueFontColor,fontSize:getProportionateText(30),height: getProportionateScreenHeight(1)),)),
+                   SizedBox(height: getProportionateScreenHeight(15),),
                     Container(
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(
+                              top: 10,
+                              bottom: 3,
+                            ),
+                            child: Text(
+                              'اسم الموظف',
+                              style: TextStyle(
+                                  color: AppColors.darkBlueFontColor,
+                                  fontSize: getProportionateText(15),
+                                  height: getProportionateScreenHeight(1)),
+                            ),
+                          ),
+                          SizedBox(
+                            height: getProportionateScreenHeight(50),
+                            child: TextFormField(
+                              controller: transfernameController,
+                              keyboardType: TextInputType.name,
+                              cursorColor: AppColors.darkBlueFontColor,
+                              obscureText: false,
+                              style: TextStyle(height: getProportionateScreenHeight(1)),
+                              enabled: true,
+                              onTap: () {},
+                              decoration: InputDecoration(
+                                hintText: 'بيانات الموظف',
+                                hoverColor: AppColors.bgColor,
+                                hintStyle: TextStyle(
+                                    color: AppColors.bgColor,height: getProportionateScreenHeight(0.4)),
+                                fillColor: AppColors.whiteFontColor,
+                                filled: true,
+                                enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(15),
+                                    borderSide: BorderSide(
+                                        width: getProportionateScreenWidth(0), color: AppColors.whiteFontColor)),
+                                focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(15),
+                                    borderSide: BorderSide(
+                                        width:getProportionateScreenWidth(0), color: AppColors.whiteFontColor)),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(
+                              top: 10,
+                              bottom: 3,
+                            ),
+                            child: Text(
+                              'رقم الأقامة',
+                              style: TextStyle(
+                                  color: AppColors.darkBlueFontColor,
+                                  fontSize: getProportionateText(15),
+                                  height: getProportionateScreenHeight(1)),
+                            ),
+                          ),
+                          SizedBox(
+                            height: getProportionateScreenHeight(50),
+                            child: TextFormField(
+                              controller: transferresidencynumberController,
+                              keyboardType: TextInputType.name,
+                              cursorColor: AppColors.darkBlueFontColor,
+                              style: TextStyle(height: getProportionateScreenHeight(1)),
+                              obscureText: false,
+                              enabled: true,
+                              onTap: () {},
+                              decoration: InputDecoration(
+                                hintText: 'رقم الأقامة',
+                                hoverColor: AppColors.bgColor,
+                                hintStyle: TextStyle(
+                                    color: AppColors.bgColor, height: getProportionateScreenHeight(0.4)),
+                                fillColor: AppColors.whiteFontColor,
+                                filled: true,
+                                enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(15),
+                                    borderSide: BorderSide(
+                                        width: getProportionateScreenWidth(0), color: AppColors.whiteFontColor)),
+                                focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(15),
+                                    borderSide: BorderSide(
+                                        width:  getProportionateScreenWidth(0), color: AppColors.whiteFontColor)),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(
+                              top: 10,
+                              bottom: 3,
+                            ),
+                            child: Text(
+                              'الإدارة المطلوبة',
+                              style: TextStyle(
+                                  color:AppColors.darkBlueFontColor,
+                                  fontSize: getProportionateText(15),
+                                  height: getProportionateScreenHeight(1)),
+                            ),
+                          ),
+                             SizedBox(
+                            height: getProportionateScreenHeight(50),
+                            child: TextFormField(
+                              controller: transferrequesttypeController,
+                              keyboardType: TextInputType.name,
+                              cursorColor: AppColors.darkBlueFontColor,
+                              style: TextStyle(height: getProportionateScreenHeight(1)),
+                              obscureText: false,
+                              enabled: true,
+                              onTap: () {},
+                              decoration: InputDecoration(
+                                hintText: 'ادارة احمد الجهني - جدة',
+                                hoverColor: AppColors.bgColor,
+                                hintStyle: TextStyle(
+                                    color: AppColors.bgColor, height: getProportionateScreenHeight(0.4)),
+                                fillColor: AppColors.whiteFontColor,
+                                filled: true,
+                                enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(15),
+                                    borderSide: BorderSide(
+                                        width: getProportionateScreenWidth(0), color: AppColors.whiteFontColor)),
+                                focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(15),
+                                    borderSide: BorderSide(
+                                        width:  getProportionateScreenWidth(0), color: AppColors.whiteFontColor)),
+                              ),
+                            ),
+                          ),
                       Padding(
                         padding: EdgeInsets.only(top:10,bottom:3,),
-                        child: Text('اسم الموظف',style: TextStyle(color:HexColor('#161D6F'),fontSize:15,height: 1),),
-                      ),
-                      SizedBox(
-                        height:50,
-                        child: TextFormField(
-                          controller: transfernameController,
-                          keyboardType: TextInputType.name,
-                          cursorColor: HexColor('#3949AB'),
-                          obscureText: false,
-                          style: TextStyle(height:1),
-                          enabled: true,
-                          onTap: () {},
-                          decoration: InputDecoration(
-                            hintText: 'بيانات الموظف',
-                            hoverColor: HexColor('#3949AB'),
-                            hintStyle: TextStyle(color: HexColor('#3949AB'),height: 1),
-                            fillColor: Colors.white,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(15),
-                                borderSide: BorderSide(
-                                width: 0,
-                                color: Colors.white
-                              )
-                               ),
-                            focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(15),
-                                borderSide: BorderSide(
-                                width: 0,
-                                color: Colors.white
-                              )
-                               ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding:EdgeInsets.only(top:10,bottom:3,),
-                        child: Text('الإدارة الحالية',style: TextStyle(color:HexColor('#161D6F'),fontSize:15,height: 1),),
-                      ),
-                      SizedBox(
-                        height:50,
-                        child: TextFormField(
-                          controller: transferresidencynumberController,
-                          keyboardType: TextInputType.name,
-                          cursorColor: HexColor('#3949AB'),
-                          style: TextStyle(height:1),
-                          obscureText: false,
-                          enabled: true,
-                          onTap: () {},
-                          decoration: InputDecoration(
-                            hintText: 'إدارة ميسان المتحدة-الرياض',
-                            hoverColor: HexColor('#3949AB'),
-                            hintStyle: TextStyle(color: HexColor('#3949AB'),height: 1),
-                            fillColor: Colors.white,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(15),
-                                borderSide: BorderSide(
-                                width: 0,
-                                color: Colors.white
-                              )
-                               ),
-                            focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(15),
-                                borderSide: BorderSide(
-                                width: 0,
-                                color: Colors.white
-                              )
-                               ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top:10,bottom:3,),
-                        child: Text('الإدارة المطلوبة',style: TextStyle(color:HexColor('#161D6F'),fontSize:15,height: 1),),
-                      ),
-                      SizedBox(
-                        height:50,
-                        child: TextFormField(
-                          controller: transferrequesttypeController,
-                          keyboardType: TextInputType.name,
-                          cursorColor: HexColor('#3949AB'),
-                          obscureText: false,
-                          enabled: true,
-                          style: TextStyle(height:1),
-                          onTap: () {},
-                          decoration: InputDecoration(
-                            hintText: 'ادارة احمد الجهني - جدة',
-                            hoverColor: HexColor('#3949AB'),
-                            hintStyle: TextStyle(color: HexColor('#3949AB'),height: 1),
-                            fillColor: Colors.white,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(15),
-                                borderSide: BorderSide(
-                                width: 0,
-                                color: Colors.white
-                              )
-                               ),
-                            focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(15),
-                                borderSide: BorderSide(
-                                width: 0,
-                                color: Colors.white
-                              )
-                               ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top:10,bottom:3,),
-                        child: Text('ســبــب الــطــلــب',style: TextStyle(color:HexColor('#161D6F'),fontSize:15,height: 1),),
+                        child: Text('ســبــب الــطــلــب',style: TextStyle(color:AppColors.darkBlueFontColor,fontSize:getProportionateText(15),height:getProportionateScreenHeight(1)),),
                       ),
                       TextFormField(
                         controller: transferrequestreasonController,
                         keyboardType: TextInputType.name,
-                        cursorColor: HexColor('#3949AB'),
+                        cursorColor: AppColors.bgColor,
                         obscureText: false,
+                        style: TextStyle(height:getProportionateScreenHeight(1)),
                         enabled: true,
-                        minLines: 4,
-                        maxLines:4,
-                        style: TextStyle(height:1),
+                        minLines: 6,
+                        maxLines:6,
                         onTap: () {},
                         decoration: InputDecoration(
                           hintText: 'سبب الطلب',
-                          hoverColor: HexColor('#3949AB'),
-                          hintStyle: TextStyle(color: HexColor('#3949AB'),),
-                          fillColor: Colors.white,
+                          
+                          hoverColor: AppColors.bgColor,
+                          hintStyle: TextStyle(color: AppColors.bgColor,height: getProportionateScreenHeight(1)),
+                          fillColor: AppColors.whiteFontColor,
                           filled: true,
                           enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15),
                               borderSide: BorderSide(
-                                width: 0,
-                                color: Colors.white
+                                width: getProportionateScreenWidth(0),
+                                color: AppColors.whiteFontColor
                               )
                              ),
                           focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15),
                               borderSide: BorderSide(
-                                width: 0,
-                                color: Colors.white
+                                width: getProportionateScreenWidth(0),
+                                color: AppColors.whiteFontColor
                               )
                              ),
                         ),
                       ),
-                      
-                      SizedBox(height:10),
+                       SizedBox(height: getProportionateScreenHeight(42)),
                   Center(
                     child: Container(
-                      height:75,
+                      height:getProportionateScreenHeight(75),
                       child: ClipRRect(
                         borderRadius:BorderRadius.circular(35),
                         child: MaterialButton(
-                          minWidth: 200,
-                          onPressed: () {},
+                          minWidth: getProportionateScreenWidth(200),
+                          onPressed: () {
+                             pop_up_approval(context).show();
+                          },
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             
@@ -217,14 +234,14 @@ class TransferRequestWithinTheAdministrationScreen extends StatelessWidget {
                               Text(
                                 'تأكيد الطلب',
                                 style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
+                                    color:AppColors.whiteFontColor,
+                                    fontSize: getProportionateText(20),
                                     fontWeight: FontWeight.normal),
                               ),
                             ],
                           ),
-                          color: HexColor('#161D6F'),
-                          height: 50,
+                          color: AppColors.darkBlueFontColor,
+                          height: getProportionateScreenHeight(50),
                         ),
                       ),
                     ),

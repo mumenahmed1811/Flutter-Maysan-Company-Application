@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demoui2/shared/components/components.dart';
+import 'package:flutter_demoui2/shared/components/size_config.dart';
+import 'package:flutter_demoui2/shared/styles/colors.dart';
 
 
 class ConfirmAttendanceScreen extends StatelessWidget {
@@ -13,26 +15,26 @@ class ConfirmAttendanceScreen extends StatelessWidget {
           children: [
             Image.asset(
               'assets/images/fingerprint.png',
-              height: 200,
+              height: getProportionateScreenHeight(200),
             ),
             SizedBox(
-              height: 60,
+              height: getProportionateScreenHeight(60),
             ),
             Text(
               'تم',
               style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 40,
+                  color: AppColors.whiteFontColor,
+                  fontSize: getProportionateText(40),
                   fontWeight: FontWeight.bold),
             ),
             SizedBox(
-              height: 30,
+              height: getProportionateScreenHeight(30),
             ),
             Text(
               'تسجيل الانصراف',
               style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 60,
+                  color: AppColors.whiteFontColor,
+                  fontSize: getProportionateText(50),
                   fontWeight: FontWeight.bold),
             ),
           ],

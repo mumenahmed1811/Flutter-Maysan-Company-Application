@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demoui2/models/chat/chatMessageModel.dart';
-import 'package:hexcolor/hexcolor.dart';
+import 'package:flutter_demoui2/shared/components/size_config.dart';
+import 'package:flutter_demoui2/shared/styles/colors.dart';
 
 class AudioMessage extends StatelessWidget {
   final ChatMessage message;
@@ -17,24 +18,24 @@ class AudioMessage extends StatelessWidget {
           Container(
        
             width: MediaQuery.of(context).size.width * 0.63,
-            height: 57,
+            height: getProportionateScreenHeight(57),
            
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: HexColor('#FFC14F')),
+                color: AppColors.yellow),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
                   "01:24",
-                  style: TextStyle(fontSize: 12, color: HexColor('#14195D')),
+                  style: TextStyle(fontSize: getProportionateText(12), color: AppColors.timedata),
                 ),
                 SizedBox(
-                  width: 10,
+                  width: getProportionateScreenWidth(10),
                 ),
                 Image.asset('assets/images/Group 69.png'),
                 SizedBox(
-                  width: 3,
+                  width: getProportionateScreenWidth(3),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(bottom: 10),
@@ -44,7 +45,7 @@ class AudioMessage extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 10,
+            height: getProportionateScreenHeight(10),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -52,10 +53,10 @@ class AudioMessage extends StatelessWidget {
               Text(
                 'PM14:26 الامس',
                 style: TextStyle(
-                    color: HexColor('#FFC14F'), height: 1, fontSize: 10),
+                    color: AppColors.yellow, height:getProportionateScreenHeight(1), fontSize: getProportionateText(10)),
               ),
               SizedBox(
-                width: 3,
+                width:getProportionateScreenWidth(3),
               ),
               if (!message.isSender)
                 Padding(

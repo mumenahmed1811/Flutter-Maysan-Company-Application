@@ -3,7 +3,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_demoui2/moduls/mumen/start/start_main.dart';
-import 'package:hexcolor/hexcolor.dart';
+import 'package:flutter_demoui2/shared/components/size_config.dart';
+import 'package:flutter_demoui2/shared/styles/colors.dart';
+
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -30,28 +32,28 @@ class _SplashScreenState extends State<SplashScreen> {
             // logo here
             Image.asset(
               'assets/images/logo.png',
-              height: 180,
+              height: getProportionateScreenHeight(180),
               fit: BoxFit.cover,
             ),
             SizedBox(
-              height: 20,
+              height: getProportionateScreenHeight(30),
             ),
             Text(
               'شركة ميسان المتحدة',
               style: TextStyle(
-                  fontSize: 40,
-                  fontWeight: FontWeight.bold,
-                  color: HexColor('#FFFFFF')),
+                  fontSize: getProportionateText(40),
+                  fontWeight: FontWeight.normal,
+                  height: getProportionateScreenHeight(1),
+                  color: AppColors.whiteFontColor),
             ),
-            SizedBox(
-              height: 10,
-            ),
+           
             Text(
               'Maysan United Company',
               style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: HexColor('#FFFFFF')),
+                  fontSize: getProportionateText(20),
+                  fontWeight: FontWeight.normal,
+                  height: getProportionateScreenHeight(1),
+                  color: AppColors.whiteFontColor),
             ),
           ],
         ),

@@ -1,7 +1,10 @@
+import 'package:dropdown_below/dropdown_below.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_demoui2/moduls/ebrahim/query/query_screen.dart';
+
 import 'package:flutter_demoui2/shared/components/components.dart';
-import 'package:hexcolor/hexcolor.dart';
+import 'package:flutter_demoui2/shared/components/size_config.dart';
+import 'package:flutter_demoui2/shared/styles/colors.dart';
+
 
 // ignore: must_be_immutable
 class RequestsResignationScreen extends StatefulWidget {
@@ -19,20 +22,20 @@ class _RequestsResignationScreenState extends State<RequestsResignationScreen> {
    TextEditingController requesttypeController = TextEditingController();
 
    TextEditingController requestreasonController = TextEditingController();
-  int value = 1;
+  var value = null;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          toolbarHeight: 65,
-           title: Text('طلبات (الخروج- الاستقالة)',style: TextStyle(color:HexColor('#161D6F'),fontSize: 30,fontWeight: FontWeight.bold ),),
-           backgroundColor: HexColor('#FFC14F'),
+          toolbarHeight:getProportionateScreenHeight(65),
+           title: Text('طلبات (الخروج- الاستقالة)',style: TextStyle(color:AppColors.darkBlueFontColor,fontSize: getProportionateText(30),fontWeight: FontWeight.bold ),),
+           backgroundColor: AppColors.yellow,
            centerTitle: true,
            shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30),bottomRight: Radius.circular(30))),
            actions: [
               Padding(
                 padding: const EdgeInsets.only(left: 8),
-                child: Icon(Icons.menu, color: Colors.white, size: 40,),
+                child: Icon(Icons.menu, color: AppColors.whiteFontColor, size: 40,),
               ),
            ],
          ),
@@ -41,10 +44,10 @@ class _RequestsResignationScreenState extends State<RequestsResignationScreen> {
           
           child: Container(
            
-            width: 350,
-            height:600,
+            width:getProportionateScreenWidth(350),
+            height:getProportionateScreenHeight(600),
             decoration: BoxDecoration(
-              color: HexColor('#FFC14F'),
+              color: AppColors.yellow,
               borderRadius: BorderRadius.circular(30)
             ),
             child: Padding(
@@ -54,154 +57,198 @@ class _RequestsResignationScreenState extends State<RequestsResignationScreen> {
                 child: Column(
                   
                   children: [
-                    Container(child: Text('التقدم لطلب ',style: TextStyle(color:HexColor('#161D6F'),fontSize:30,height: 1),)),
-                    SizedBox(height: 15,),
+                    Container(child: Text('التقدم لطلب ',style: TextStyle(color:AppColors.darkBlueFontColor,fontSize:getProportionateText(30),height: getProportionateScreenHeight(1)),)),
+                    SizedBox(height: getProportionateScreenHeight(15),),
                     Container(
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                      Padding(
-                        padding: EdgeInsets.only(top:10,bottom:3,),
-                        child: Text('اسم الموظف',style: TextStyle(color:HexColor('#161D6F'),fontSize:15,height: 1),),
-                      ),
-                      TextFormField(
-                        controller: nameController,
-                         style: TextStyle(height:1),
-                        keyboardType: TextInputType.name,
-                        cursorColor: HexColor('#3949AB'),
-                        obscureText: false,
-                        enabled: true,
-                        onTap: () {},
-                        decoration: InputDecoration(
-                          hintText: 'بيانات الموظف',
-                          hoverColor: HexColor('#3949AB'),
-                          hintStyle: TextStyle(color: HexColor('#3949AB'),height: 1),
-                          fillColor: Colors.white,
-                          filled: true,
-                         
-                          enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15),
-                              borderSide: BorderSide(
-                                width: 0,
-                                color: Colors.white
-                              )
-                             ),
-                          focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15),
-                              borderSide: BorderSide(
-                                width: 0,
-                                color: Colors.white
-                              )
-                             ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top:10,bottom:3,),
-                        child: Text('رقم الأقامة',style: TextStyle(color:HexColor('#161D6F'),fontSize:15,height: 1),),
-                      ),
-                      TextFormField(
-                        controller: residencynumberController,
-                        keyboardType: TextInputType.name,
-                        cursorColor: HexColor('#3949AB'),
-                        obscureText: false,
-                         style: TextStyle(height:1),
-                        enabled: true,
-                        onTap: () {},
-                        decoration: InputDecoration(
-                          hintText: 'رقم الأقامة',
-                          hoverColor: HexColor('#3949AB'),
-                          hintStyle: TextStyle(color: HexColor('#3949AB'),height: 1),
-                          fillColor: Colors.white,
-                          filled: true,
-                          enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15),
-                              borderSide: BorderSide(
-                                width: 0,
-                                color: Colors.white
-                              )
-                             ),
-                          focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15),
-                              borderSide: BorderSide(
-                                width: 0,
-                                color: Colors.white
-                              )
-                             ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top:10,bottom:3,),
-                        child: Text('نوع الطلب',style: TextStyle(color:HexColor('#161D6F'),fontSize:15,height: 1),),
-                      ),
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(
+                              top: 10,
+                              bottom: 3,
+                            ),
+                            child: Text(
+                              'اسم الموظف',
+                              style: TextStyle(
+                                  color: AppColors.darkBlueFontColor,
+                                  fontSize: getProportionateText(15),
+                                  height: getProportionateScreenHeight(1)),
+                            ),
+                          ),
+                          SizedBox(
+                            height: getProportionateScreenHeight(50),
+                            child: TextFormField(
+                              controller: nameController,
+                              keyboardType: TextInputType.name,
+                              cursorColor: AppColors.darkBlueFontColor,
+                              obscureText: false,
+                              style: TextStyle(height: getProportionateScreenHeight(1)),
+                              enabled: true,
+                              onTap: () {},
+                              decoration: InputDecoration(
+                                hintText: 'بيانات الموظف',
+                                hoverColor: AppColors.bgColor,
+                                hintStyle: TextStyle(
+                                    color: AppColors.bgColor,height: getProportionateScreenHeight(0.4)),
+                                fillColor: AppColors.whiteFontColor,
+                                filled: true,
+                                enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(15),
+                                    borderSide: BorderSide(
+                                        width: getProportionateScreenWidth(0), color: AppColors.whiteFontColor)),
+                                focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(15),
+                                    borderSide: BorderSide(
+                                        width:getProportionateScreenWidth(0), color: AppColors.whiteFontColor)),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(
+                              top: 10,
+                              bottom: 3,
+                            ),
+                            child: Text(
+                              'رقم الأقامة',
+                              style: TextStyle(
+                                  color: AppColors.darkBlueFontColor,
+                                  fontSize: getProportionateText(15),
+                                  height: getProportionateScreenHeight(1)),
+                            ),
+                          ),
+                          SizedBox(
+                            height: getProportionateScreenHeight(50),
+                            child: TextFormField(
+                              controller: residencynumberController,
+                              keyboardType: TextInputType.name,
+                              cursorColor: AppColors.darkBlueFontColor,
+                              style: TextStyle(height: getProportionateScreenHeight(1)),
+                              obscureText: false,
+                              enabled: true,
+                              onTap: () {},
+                              decoration: InputDecoration(
+                                hintText: 'رقم الأقامة',
+                                hoverColor: AppColors.bgColor,
+                                hintStyle: TextStyle(
+                                    color: AppColors.bgColor, height: getProportionateScreenHeight(0.4)),
+                                fillColor: AppColors.whiteFontColor,
+                                filled: true,
+                                enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(15),
+                                    borderSide: BorderSide(
+                                        width: getProportionateScreenWidth(0), color: AppColors.whiteFontColor)),
+                                focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(15),
+                                    borderSide: BorderSide(
+                                        width:  getProportionateScreenWidth(0), color: AppColors.whiteFontColor)),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(
+                              top: 10,
+                              bottom: 3,
+                            ),
+                            child: Text(
+                              'نوع الطلب',
+                              style: TextStyle(
+                                  color:AppColors.darkBlueFontColor,
+                                  fontSize: getProportionateText(15),
+                                  height: getProportionateScreenHeight(1)),
+                            ),
+                          ),
                           Container(
-                            width: 500,
-                            height: 50,
+                            width: getProportionateScreenWidth(500),
+                            height: getProportionateScreenHeight(55),
+                            alignment: Alignment.center,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(15),
-                                color: Colors.white),
-                            child: DropdownButtonFormField(
-                              decoration: InputDecoration(
-                                enabledBorder: InputBorder.none,
+                                color: AppColors.whiteFontColor),
+                            child: DropdownBelow(
+                              itemWidth:
+                                  MediaQuery.of(context).size.width * 0.895,
+                              itemTextstyle: TextStyle(
+                                   height: getProportionateScreenHeight(1.5),
+                                   fontSize: 16,
+                                   fontFamily: 'ArbFONTS-4_AF',
+                                  color:AppColors.bgColor),
+                              boxTextstyle: TextStyle(
+                                  height: getProportionateScreenHeight(1.5),
+                                  
+                                   fontFamily: 'ArbFONTS-4_AF',
+                                  color: AppColors.bgColor),
+                              boxPadding: EdgeInsets.fromLTRB(13, 15, 5, 10),
+                              boxHeight: getProportionateScreenHeight(45),
+                              boxWidth:
+                                  MediaQuery.of(context).size.width * 0.895,
+                              hint: Padding(
+                                padding: const EdgeInsets.only(right: 8),
+                                child: Text("سليكت لنوع الطلب",
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                        color: AppColors.bgColor, height: getProportionateScreenHeight(0.4),fontWeight: FontWeight.normal,)),
                               ),
-                              elevation: 8,
-                              isDense: true,
-                              isExpanded: true,
-                              icon: Padding(
-                                padding: const EdgeInsets.only(left: 15.0),
-                                child:
-                                    Image.asset('assets/images/Path 11639.png'),
-                              ),
+                              icon: Image.asset('assets/images/Path 11639.png'),
                               value: value,
                               items: [
                                 DropdownMenuItem(
                                   child: Padding(
-                                    padding: const EdgeInsets.only(right: 8.0),
+                                    padding: EdgeInsets.only(right: 8),
                                     child: Text("سليكت لنوع الطلب",
                                         style: TextStyle(
-                                            color: HexColor('#3949AB'),
-                                            height: 1)),
+                                          fontSize: 16,
+                                            color: AppColors.bgColor,
+                                            fontWeight: FontWeight.normal,
+                                            height: getProportionateScreenHeight(0.4))),
                                   ),
                                   value: 1,
                                 ),
                                 DropdownMenuItem(
                                   child: Padding(
-                                    padding: const EdgeInsets.only(right: 8.0),
+                                    padding: EdgeInsets.only(right: 8),
                                     child: Text(
                                       "سليكت لنوع الطلب",
                                       style: TextStyle(
-                                          color: HexColor('#3949AB'),
-                                          height: 1),
+                                        fontSize: 16,
+                                          color: AppColors.bgColor,
+                                          fontWeight: FontWeight.normal,
+                                          height: getProportionateScreenHeight(0.4)),
                                     ),
                                   ),
                                   value: 2,
                                 ),
                                 DropdownMenuItem(
                                   child: Padding(
-                                    padding: const EdgeInsets.only(right: 8.0),
+                                    padding: EdgeInsets.only(right: 8),
                                     child: Text(
                                       "سليكت لنوع الطلب",
                                       style: TextStyle(
-                                          color: HexColor('#3949AB'),
-                                          height: 1),
+                                        fontSize: 16,
+                                          color: AppColors.bgColor,
+                                          fontWeight: FontWeight.normal,
+                                          height: getProportionateScreenHeight(0.4)),
                                     ),
                                   ),
                                   value: 3,
                                 ),
                                 DropdownMenuItem(
                                   child: Padding(
-                                    padding: const EdgeInsets.only(right: 8.0),
+                                    padding: EdgeInsets.only(right: 8),
                                     child: Text(
                                       "سليكت لنوع الطلب",
                                       style: TextStyle(
-                                          color: HexColor('#3949AB'),
-                                          height: 1),
+                                        fontSize: 16,
+                                          color: AppColors.bgColor,
+                                          fontWeight: FontWeight.normal,
+                                          height: getProportionateScreenHeight(0.4)),
                                     ),
                                   ),
                                   value: 4,
                                 )
                               ],
-                              onChanged: (int? index) {
+                              onChanged: (var index) {
                                 setState(() {
                                   value = index!;
                                 });
@@ -210,14 +257,14 @@ class _RequestsResignationScreenState extends State<RequestsResignationScreen> {
                           ),
                       Padding(
                         padding: EdgeInsets.only(top:10,bottom:3,),
-                        child: Text('ســبــب الــطــلــب',style: TextStyle(color:HexColor('#161D6F'),fontSize:15,height: 1),),
+                        child: Text('ســبــب الــطــلــب',style: TextStyle(color:AppColors.darkBlueFontColor,fontSize:getProportionateText(15),height:getProportionateScreenHeight(1)),),
                       ),
                       TextFormField(
                         controller: requestreasonController,
                         keyboardType: TextInputType.name,
-                        cursorColor: HexColor('#3949AB'),
+                        cursorColor: AppColors.bgColor,
                         obscureText: false,
-                        style: TextStyle(height:1),
+                        style: TextStyle(height:getProportionateScreenHeight(1)),
                         enabled: true,
                         minLines: 6,
                         maxLines:6,
@@ -225,37 +272,36 @@ class _RequestsResignationScreenState extends State<RequestsResignationScreen> {
                         decoration: InputDecoration(
                           hintText: 'سبب الطلب',
                           
-                          hoverColor: HexColor('#3949AB'),
-                          hintStyle: TextStyle(color: HexColor('#3949AB'),height: 1),
-                          fillColor: Colors.white,
+                          hoverColor: AppColors.bgColor,
+                          hintStyle: TextStyle(color: AppColors.bgColor,height: getProportionateScreenHeight(1)),
+                          fillColor: AppColors.whiteFontColor,
                           filled: true,
                           enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15),
                               borderSide: BorderSide(
-                                width: 0,
-                                color: Colors.white
+                                width: getProportionateScreenWidth(0),
+                                color: AppColors.whiteFontColor
                               )
                              ),
                           focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15),
                               borderSide: BorderSide(
-                                width: 0,
-                                color: Colors.white
+                                width: getProportionateScreenWidth(0),
+                                color: AppColors.whiteFontColor
                               )
                              ),
                         ),
                       ),
-                      SizedBox(height:10),
+                       SizedBox(height: getProportionateScreenHeight(42)),
                   Center(
                     child: Container(
-                      height:75,
+                      height:getProportionateScreenHeight(75),
                       child: ClipRRect(
                         borderRadius:BorderRadius.circular(35),
                         child: MaterialButton(
-                          minWidth: 200,
+                          minWidth: getProportionateScreenWidth(200),
                           onPressed: () {
-                            Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (_) => QueryScreen()));
+                             pop_up_approval(context).show();
                           },
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
@@ -266,14 +312,14 @@ class _RequestsResignationScreenState extends State<RequestsResignationScreen> {
                               Text(
                                 'تأكيد الطلب',
                                 style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
+                                    color:AppColors.whiteFontColor,
+                                    fontSize: getProportionateText(20),
                                     fontWeight: FontWeight.normal),
                               ),
                             ],
                           ),
-                          color: HexColor('#161D6F'),
-                          height: 50,
+                          color: AppColors.darkBlueFontColor,
+                          height: getProportionateScreenHeight(50),
                         ),
                       ),
                     ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demoui2/models/chat/chatMessageModel.dart';
-import 'package:hexcolor/hexcolor.dart';
+import 'package:flutter_demoui2/shared/components/size_config.dart';
+import 'package:flutter_demoui2/shared/styles/colors.dart';
+
 
 class TextMessage extends StatelessWidget {
   const TextMessage({
@@ -19,14 +21,14 @@ class TextMessage extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
           decoration: BoxDecoration(
               color:
-                  message.isSender ? HexColor('#FFC14F') : HexColor('#161D6F'),
+                  message.isSender ? AppColors.yellow: AppColors.darkBlueFontColor,
               borderRadius: BorderRadius.circular(10)),
           child: Text(
             message.text,
             style: TextStyle(
-                color: message.isSender ? HexColor('#3949AB') : Colors.white,
-                height: 1.5,
-                fontSize: 15),
+                color: message.isSender ? AppColors.bgColor: AppColors.whiteFontColor,
+                height: getProportionateScreenHeight(1.5),
+                fontSize: getProportionateText(15)),
           ),
         ),
         Container(
@@ -38,14 +40,14 @@ class TextMessage extends StatelessWidget {
                   child: Image.asset('assets/images/Group 71.png'),
                 ),
               SizedBox(
-                width: 3,
+                width: getProportionateScreenWidth(3),
               ),
               Padding(
                 padding: const EdgeInsets.only(left:5,right: 5),
                 child: Text(
                   'PM14:26 الامس',
                   style: TextStyle(
-                      color: HexColor('#FFC14F'), height: 1, fontSize: 10),
+                      color: AppColors.yellow, height: getProportionateScreenHeight(1), fontSize: getProportionateText(10)),
                 ),
               ),
             ],

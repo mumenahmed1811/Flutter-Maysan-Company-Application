@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demoui2/models/chat/chatMessageModel.dart';
 import 'package:flutter_demoui2/moduls/ebrahim/chat/componentsChat/text_message.dart';
+import 'package:flutter_demoui2/shared/components/size_config.dart';
 
 import 'audio_message.dart';
 
@@ -45,8 +46,8 @@ class Message extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.circular(10.0)),//add border radius here
                     child: Image.asset(
                       'assets/images/male.png',
-                      height: 35,
-                      width: 35,
+                      height: getProportionateScreenHeight(35),
+                      width: getProportionateScreenWidth(35),
                     ),//add image location here
                     ),
                   ),
@@ -59,7 +60,7 @@ class Message extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 messageContaint(message),
-                SizedBox(width: 10,),
+                SizedBox(width: getProportionateScreenWidth(10),),
                 ...[
                   Padding(
                     padding: const EdgeInsets.only(bottom: 9,right: 4,left: 20),
@@ -67,8 +68,8 @@ class Message extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.circular(10.0)),//add border radius here
                     child: Image.asset(
                       'assets/images/Photo.jpg',
-                      height: 30,
-                      width: 30,
+                      height: getProportionateScreenHeight(30),
+                      width: getProportionateScreenWidth(30),
                     ),//add image location here
                     ),
                   ),

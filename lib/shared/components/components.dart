@@ -1,6 +1,8 @@
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_demoui2/shared/components/size_config.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 class GetItem extends StatelessWidget {
   final String textTop;
@@ -9,7 +11,8 @@ class GetItem extends StatelessWidget {
   const GetItem({
     Key? key,
     required this.textTop,
-    required this.textBottom, required this.fun,
+    required this.textBottom,
+    required this.fun,
   }) : super(key: key);
 
   @override
@@ -117,4 +120,149 @@ class _BNBState extends State<BNB> {
       ),
     );
   }
+}
+
+Alert pop_up_approval(BuildContext context) {
+  return Alert(
+    context: context,
+
+    //title: "حان موعد",
+    image: Image.asset(
+      'assets/images/Path 11609.png',
+      height: getProportionateScreenHeight(100),
+      width: getProportionateScreenWidth(100),
+    ),
+    padding: EdgeInsets.zero,
+   content: Column(
+      children: <Widget>[
+        Text(
+          'تم استلام طلبكم',
+          style: TextStyle(
+              fontWeight: FontWeight.normal,
+              fontSize: 35,
+              color: HexColor('#161D6F'),
+              height: 1.5,
+              wordSpacing: 2),
+        ),
+        Text(
+          'رقم الطلب',
+          style: TextStyle(
+              fontWeight: FontWeight.normal,
+              fontSize: 35,
+              color: HexColor('#161D6F'),
+              height: 1.5,
+              wordSpacing: 2),
+        ),
+        Text(
+          '12345',
+          style: TextStyle(
+        fontWeight: FontWeight.normal,
+        fontSize: 35,
+        color: Colors.white,
+      ),
+        ),
+        Text(
+          'برجاء الاحتفاظ برقم الطلب',
+          style: TextStyle(
+        fontWeight: FontWeight.normal,
+        fontSize: 20,
+        color: Colors.white,
+      ),
+        ),
+        
+      ],
+    ),
+    style: AlertStyle(
+      animationType: AnimationType.shrink,
+      isOverlayTapDismiss: false,
+      alertPadding: EdgeInsets.zero,
+      buttonAreaPadding: EdgeInsets.zero,
+      isCloseButton: false,
+      
+      backgroundColor: HexColor('#FFC14F').withOpacity(0.9),
+     
+      descTextAlign: TextAlign.center,
+      isButtonVisible: false,
+      alertBorder: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(50),
+        side: BorderSide(color: Colors.white, width: 1.5),
+      ),
+      overlayColor: Color(0x55000000).withOpacity(0.5),
+      alertElevation: 0,
+     
+      
+    ),
+  );
+}
+
+Alert pop_up_rejection(BuildContext context) {
+  return Alert(
+    context: context,
+    image: Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: CircleAvatar(
+        radius: 50,
+        backgroundColor: HexColor('#3949AB'),
+        child: Image.asset('assets/images/Path 11638.png'),
+      ),
+    ),
+    padding: EdgeInsets.zero,
+    content: Column(
+      children: <Widget>[
+        Text(
+          'عفواً',
+          style: TextStyle(
+              fontWeight: FontWeight.normal,
+              fontSize: 30,
+              color: HexColor('#161D6F'),
+              height: 1.5,
+              wordSpacing: 2),
+        ),
+        Text(
+          'لايستحق هذا الموظف',
+          style: TextStyle(
+              fontWeight: FontWeight.normal,
+              fontSize: 30,
+              color: HexColor('#161D6F'),
+              height: 1.5,
+              wordSpacing: 2),
+        ),
+        Text(
+          'التقدم لطلب اجازة',
+          style: TextStyle(
+        fontWeight: FontWeight.normal,
+        fontSize: 30,
+        color: Colors.white,
+      ),
+        ),
+        Text(
+          'الرجاء المحاولة في الوقت المخصص لك',
+          style: TextStyle(
+        fontWeight: FontWeight.normal,
+        fontSize: 17,
+        color: Colors.white,
+      ),
+        ),
+        
+      ],
+    ),
+    style: AlertStyle(
+      animationType: AnimationType.shrink,
+      isOverlayTapDismiss: false,
+      alertPadding: EdgeInsets.zero,
+      buttonAreaPadding: EdgeInsets.zero,
+      isCloseButton: false,
+      backgroundColor: HexColor('#FFC14F').withOpacity(0.9),
+     
+      
+      isButtonVisible: false,
+      alertBorder: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(50),
+        side: BorderSide(color: Colors.white, width: 1.5),
+      ),
+      overlayColor: Color(0x55000000).withOpacity(0.5),
+      alertElevation: 0,
+      
+    ),
+  );
 }

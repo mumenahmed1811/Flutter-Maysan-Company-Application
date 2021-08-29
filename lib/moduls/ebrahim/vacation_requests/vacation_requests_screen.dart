@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demoui2/moduls/ebrahim/annual_leave_request/annual_leave_request_screen.dart';
 import 'package:flutter_demoui2/shared/components/components.dart';
-import 'package:hexcolor/hexcolor.dart';
+import 'package:flutter_demoui2/shared/components/size_config.dart';
+import 'package:flutter_demoui2/shared/styles/colors.dart';
 
 // ignore: must_be_immutable
 class VacationRequestsScreen extends StatelessWidget {
@@ -11,15 +12,15 @@ class VacationRequestsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          toolbarHeight: 65,
-           title: Text('طلبات الاجازة',style: TextStyle(color:HexColor('#161D6F'),fontSize: 40,fontWeight: FontWeight.normal ),),
-           backgroundColor: HexColor('#FFC14F'),
+          toolbarHeight:getProportionateScreenHeight(65),
+           title: Text('طلبات الاجازة',style: TextStyle(color:AppColors.darkBlueFontColor,fontSize: getProportionateText(30),fontWeight: FontWeight.bold),),
+           backgroundColor: AppColors.yellow,
            centerTitle: true,
            shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30),bottomRight: Radius.circular(30))),
            actions: [
               Padding(
                 padding: const EdgeInsets.only(left: 8),
-                child: Icon(Icons.menu, color: Colors.white, size: 40,),
+                child: Icon(Icons.menu, color: AppColors.whiteFontColor, size: 40,),
               ),
            ],
          ),      

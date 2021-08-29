@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demoui2/models/chat/chatMessageModel.dart';
 import 'package:flutter_demoui2/shared/components/components.dart';
-import 'package:hexcolor/hexcolor.dart';
+import 'package:flutter_demoui2/shared/components/size_config.dart';
+import 'package:flutter_demoui2/shared/styles/colors.dart';
+
 import 'componentsChat/message.dart';
 
 
@@ -11,15 +13,15 @@ class ChatScreen_2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 65,
+        toolbarHeight: getProportionateScreenHeight(65),
         title: Text(
           'طلبات الاجازة',
           style: TextStyle(
-              color: HexColor('#161D6F'),
-              fontSize: 40,
+              color: AppColors.darkBlueFontColor,
+              fontSize: getProportionateText(40),
               fontWeight: FontWeight.normal),
         ),
-        backgroundColor: HexColor('#FFC14F'),
+        backgroundColor: AppColors.yellow,
         centerTitle: true,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.only(

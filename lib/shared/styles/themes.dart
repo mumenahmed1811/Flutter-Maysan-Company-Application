@@ -14,7 +14,7 @@ ThemeData defaultTheme = ThemeData(
   appBarTheme: AppBarTheme(
     backwardsCompatibility: false,
     systemOverlayStyle: SystemUiOverlayStyle(
-      statusBarColor: Color(0xFFFFC14F),
+      statusBarColor: Color(0xFFFFC14F).withOpacity(0.5),
       statusBarIconBrightness: Brightness.light,
     ),
   ),

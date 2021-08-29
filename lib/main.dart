@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demoui2/moduls/ebrahim/splash_screen/splash_screen.dart';
+
+
 import 'package:flutter_demoui2/shared/components/size_config.dart';
 import 'package:flutter_demoui2/shared/styles/themes.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 
 // ignore: unused_import
-import 'moduls/mumen/chat/chat_screen.dart';
+import 'moduls/ebrahim/Requests (exit - resignation)/Requests_resignation_screen.dart';
+
 // ignore: unused_import
-import 'moduls/mumen/working_team/working_team_screen.dart';
+import 'moduls/ebrahim/check_out/check_out_screen.dart';
+
+import 'moduls/ebrahim/splash_screen/splash_screen.dart';
+
+
+
+
 
 void main() {
   runApp(MyApp());

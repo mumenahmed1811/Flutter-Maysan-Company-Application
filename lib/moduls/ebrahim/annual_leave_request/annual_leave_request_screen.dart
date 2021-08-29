@@ -1,7 +1,12 @@
+import 'package:dropdown_below/dropdown_below.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_demoui2/moduls/ebrahim/query_rejection/query_rejection_screen.dart';
+
+
 import 'package:flutter_demoui2/shared/components/components.dart';
-import 'package:hexcolor/hexcolor.dart';
+import 'package:flutter_demoui2/shared/components/size_config.dart';
+import 'package:flutter_demoui2/shared/styles/colors.dart';
+
 
 // ignore: must_be_immutable
 class AnnualLeaveRequestScreen extends StatefulWidget {
@@ -21,21 +26,23 @@ class _AnnualLeaveRequestScreenState extends State<AnnualLeaveRequestScreen> {
   TextEditingController transferrequestreasonController =
       TextEditingController();
 
-  int value = 1;
- 
+  var value = null;
+
+  DateTime selectedDate = DateTime.now();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 65,
+        toolbarHeight: getProportionateScreenHeight(65),
         title: Text(
           'طلب إجازة سنوية',
           style: TextStyle(
-              color: HexColor('#161D6F'),
-              fontSize: 30,
+              color: AppColors.darkBlueFontColor,
+              fontSize: getProportionateText(30),
               fontWeight: FontWeight.bold),
         ),
-        backgroundColor: HexColor('#FFC14F'),
+        backgroundColor: AppColors.yellow,
         centerTitle: true,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
@@ -46,7 +53,7 @@ class _AnnualLeaveRequestScreenState extends State<AnnualLeaveRequestScreen> {
             padding: const EdgeInsets.only(left: 8),
             child: Icon(
               Icons.menu,
-              color: Colors.white,
+              color: AppColors.whiteFontColor,
               size: 40,
             ),
           ),
@@ -55,10 +62,10 @@ class _AnnualLeaveRequestScreenState extends State<AnnualLeaveRequestScreen> {
       body: Center(
         child: SingleChildScrollView(
           child: Container(
-            width: 350,
-            height: 552,
+            width: getProportionateScreenWidth(350),
+            height:getProportionateScreenHeight(552), 
             decoration: BoxDecoration(
-                color: HexColor('#FFC14F'),
+                color: AppColors.yellow,
                 borderRadius: BorderRadius.circular(30)),
             child: Padding(
               padding: const EdgeInsets.all(20),
@@ -70,10 +77,10 @@ class _AnnualLeaveRequestScreenState extends State<AnnualLeaveRequestScreen> {
                         child: Text(
                       'طلب نقل داخل ادارة ',
                       style: TextStyle(
-                          color: HexColor('#161D6F'), fontSize: 30, height: 1),
+                          color: AppColors.darkBlueFontColor ,fontSize: getProportionateText(30), height: getProportionateScreenHeight(1)),
                     )),
                     SizedBox(
-                      height: 15,
+                      height: getProportionateScreenHeight(15),
                     ),
                     Container(
                       child: Column(
@@ -88,36 +95,36 @@ class _AnnualLeaveRequestScreenState extends State<AnnualLeaveRequestScreen> {
                             child: Text(
                               'اسم الموظف',
                               style: TextStyle(
-                                  color: HexColor('#161D6F'),
-                                  fontSize: 15,
-                                  height: 1),
+                                  color: AppColors.darkBlueFontColor,
+                                  fontSize: getProportionateText(15),
+                                  height: getProportionateScreenHeight(1)),
                             ),
                           ),
                           SizedBox(
-                            height: 50,
+                            height: getProportionateScreenHeight(50),
                             child: TextFormField(
                               controller: transfernameController,
                               keyboardType: TextInputType.name,
-                              cursorColor: HexColor('#3949AB'),
+                              cursorColor: AppColors.darkBlueFontColor,
                               obscureText: false,
-                              style: TextStyle(height: 1),
+                              style: TextStyle(height: getProportionateScreenHeight(1)),
                               enabled: true,
                               onTap: () {},
                               decoration: InputDecoration(
                                 hintText: 'بيانات الموظف',
-                                hoverColor: HexColor('#3949AB'),
+                                hoverColor: AppColors.bgColor,
                                 hintStyle: TextStyle(
-                                    color: HexColor('#3949AB'), height: 1),
-                                fillColor: Colors.white,
+                                    color: AppColors.bgColor,height: getProportionateScreenHeight(0.4)),
+                                fillColor: AppColors.whiteFontColor,
                                 filled: true,
                                 enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(15),
                                     borderSide: BorderSide(
-                                        width: 0, color: Colors.white)),
+                                        width: getProportionateScreenWidth(0), color: AppColors.whiteFontColor)),
                                 focusedBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(15),
                                     borderSide: BorderSide(
-                                        width: 0, color: Colors.white)),
+                                        width:getProportionateScreenWidth(0), color: AppColors.whiteFontColor)),
                               ),
                             ),
                           ),
@@ -129,36 +136,36 @@ class _AnnualLeaveRequestScreenState extends State<AnnualLeaveRequestScreen> {
                             child: Text(
                               'الإدارة الحالية',
                               style: TextStyle(
-                                  color: HexColor('#161D6F'),
-                                  fontSize: 15,
-                                  height: 1),
+                                  color: AppColors.darkBlueFontColor,
+                                  fontSize: getProportionateText(15),
+                                  height: getProportionateScreenHeight(1)),
                             ),
                           ),
                           SizedBox(
-                            height: 50,
+                            height: getProportionateScreenHeight(50),
                             child: TextFormField(
                               controller: transferresidencynumberController,
                               keyboardType: TextInputType.name,
-                              cursorColor: HexColor('#3949AB'),
-                              style: TextStyle(height: 1),
+                              cursorColor: AppColors.darkBlueFontColor,
+                              style: TextStyle(height: getProportionateScreenHeight(1)),
                               obscureText: false,
                               enabled: true,
                               onTap: () {},
                               decoration: InputDecoration(
                                 hintText: 'إدارة ميسان المتحدة-الرياض',
-                                hoverColor: HexColor('#3949AB'),
+                                hoverColor: AppColors.bgColor,
                                 hintStyle: TextStyle(
-                                    color: HexColor('#3949AB'), height: 1),
-                                fillColor: Colors.white,
+                                    color: AppColors.bgColor, height: getProportionateScreenHeight(0.4)),
+                                fillColor: AppColors.whiteFontColor,
                                 filled: true,
                                 enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(15),
                                     borderSide: BorderSide(
-                                        width: 0, color: Colors.white)),
+                                        width: getProportionateScreenWidth(0), color: AppColors.whiteFontColor)),
                                 focusedBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(15),
                                     borderSide: BorderSide(
-                                        width: 0, color: Colors.white)),
+                                        width:  getProportionateScreenWidth(0), color: AppColors.whiteFontColor)),
                               ),
                             ),
                           ),
@@ -170,79 +177,101 @@ class _AnnualLeaveRequestScreenState extends State<AnnualLeaveRequestScreen> {
                             child: Text(
                               'نوع الاجازة',
                               style: TextStyle(
-                                  color: HexColor('#161D6F'),
-                                  fontSize: 15,
-                                  height: 1),
+                                  color:AppColors.darkBlueFontColor,
+                                  fontSize: getProportionateText(15),
+                                  height: getProportionateScreenHeight(1)),
                             ),
                           ),
                           Container(
-                            width: 500,
-                            height: 50,
+                            width: getProportionateScreenWidth(500),
+                            height: getProportionateScreenHeight(55),
+                            alignment: Alignment.center,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(15),
-                                color: Colors.white),
-                            child: DropdownButtonFormField(
-                              decoration: InputDecoration(
-                                enabledBorder: InputBorder.none,
+                                color: AppColors.whiteFontColor),
+                            child: DropdownBelow(
+                              itemWidth:
+                                  MediaQuery.of(context).size.width * 0.895,
+                              itemTextstyle: TextStyle(
+                                   height: getProportionateScreenHeight(1.5),
+                                   fontSize: 16,
+                                   fontFamily: 'ArbFONTS-4_AF',
+                                  color:AppColors.bgColor),
+                              boxTextstyle: TextStyle(
+                                  height: getProportionateScreenHeight(1.5),
+                                  
+                                   fontFamily: 'ArbFONTS-4_AF',
+                                  color: AppColors.bgColor),
+                              boxPadding: EdgeInsets.fromLTRB(13, 15, 5, 10),
+                              boxHeight: getProportionateScreenHeight(45),
+                              boxWidth:
+                                  MediaQuery.of(context).size.width * 0.895,
+                              hint: Padding(
+                                padding: const EdgeInsets.only(right: 8),
+                                child: Text("سليكت أنواع الاجازات",
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                        color: AppColors.bgColor, height: getProportionateScreenHeight(0.4),fontWeight: FontWeight.normal,)),
                               ),
-                              elevation: 8,
-                              isDense: true,
-                              isExpanded: true,
-                              icon: Padding(
-                                padding: const EdgeInsets.only(left: 15.0),
-                                child:
-                                    Image.asset('assets/images/Path 11639.png'),
-                              ),
+                              icon: Image.asset('assets/images/Path 11639.png'),
                               value: value,
                               items: [
                                 DropdownMenuItem(
                                   child: Padding(
-                                    padding: const EdgeInsets.only(right: 8.0),
+                                    padding: EdgeInsets.only(right: 8),
                                     child: Text("سليكت أنواع الاجازات",
                                         style: TextStyle(
-                                            color: HexColor('#3949AB'),
-                                            height: 1)),
+                                          fontSize: 16,
+                                            color: AppColors.bgColor,
+                                            fontWeight: FontWeight.normal,
+                                            height: getProportionateScreenHeight(0.4))),
                                   ),
                                   value: 1,
                                 ),
                                 DropdownMenuItem(
                                   child: Padding(
-                                    padding: const EdgeInsets.only(right: 8.0),
+                                    padding: EdgeInsets.only(right: 8),
                                     child: Text(
                                       "سليكت أنواع الاجازات",
                                       style: TextStyle(
-                                          color: HexColor('#3949AB'),
-                                          height: 1),
+                                        fontSize: 16,
+                                          color: AppColors.bgColor,
+                                          fontWeight: FontWeight.normal,
+                                          height: getProportionateScreenHeight(0.4)),
                                     ),
                                   ),
                                   value: 2,
                                 ),
                                 DropdownMenuItem(
                                   child: Padding(
-                                    padding: const EdgeInsets.only(right: 8.0),
+                                    padding: EdgeInsets.only(right: 8),
                                     child: Text(
                                       "سليكت أنواع الاجازات",
                                       style: TextStyle(
-                                          color: HexColor('#3949AB'),
-                                          height: 1),
+                                        fontSize: 16,
+                                          color: AppColors.bgColor,
+                                          fontWeight: FontWeight.normal,
+                                          height: getProportionateScreenHeight(0.4)),
                                     ),
                                   ),
                                   value: 3,
                                 ),
                                 DropdownMenuItem(
                                   child: Padding(
-                                    padding: const EdgeInsets.only(right: 8.0),
+                                    padding: EdgeInsets.only(right: 8),
                                     child: Text(
                                       "سليكت أنواع الاجازات",
                                       style: TextStyle(
-                                          color: HexColor('#3949AB'),
-                                          height: 1),
+                                        fontSize: 16,
+                                          color: AppColors.bgColor,
+                                          fontWeight: FontWeight.normal,
+                                          height: getProportionateScreenHeight(0.4)),
                                     ),
                                   ),
                                   value: 4,
                                 )
                               ],
-                              onChanged: (int? index) {
+                              onChanged: (var index) {
                                 setState(() {
                                   value = index!;
                                 });
@@ -257,62 +286,72 @@ class _AnnualLeaveRequestScreenState extends State<AnnualLeaveRequestScreen> {
                             child: Text(
                               'تاريخ الاجازة من .....الي',
                               style: TextStyle(
-                                  color: HexColor('#161D6F'),
-                                  fontSize: 15,
-                                  height: 1),
+                                  color: AppColors.darkBlueFontColor,
+                                  fontSize: getProportionateText(15),
+                                  height: getProportionateScreenHeight(1)),
                             ),
                           ),
-                          TextFormField(
-                            controller: transferrequestreasonController,
-                            keyboardType: TextInputType.name,
-                            cursorColor: HexColor('#3949AB'),
-                            obscureText: false,
-                            enabled: true,
-                            style: TextStyle(height: 1),
-                            onTap: () async {
-                            
-                              FocusScope.of(context)
-                                  .requestFocus(new FocusNode());
-                            var date = await showDatePicker(
-                            context: context, 
-                            initialDate:DateTime.now(),
-                            firstDate:DateTime(1900),
-                            lastDate: DateTime(2100),
-                          
-                            
-                            );
-                          
-                            transferrequestreasonController.text = date!.toIso8601String();
-                            },
-                            decoration: InputDecoration(
-                              hintText: '10 ايام',
-                              hoverColor: HexColor('#3949AB'),
-                              hintStyle: TextStyle(
-                                color: HexColor('#3949AB'),
+                          SizedBox(
+                           height: getProportionateScreenHeight(50),
+                            child: TextFormField(
+                              controller: transferrequestreasonController,
+                              keyboardType: TextInputType.name,
+                              cursorColor: AppColors.bgColor,
+                              obscureText: false,
+                              enabled: true,
+                              style: TextStyle(height: getProportionateScreenHeight(1)),
+                              onTap: () async {
+                                FocusScope.of(context)
+                                    .requestFocus(new FocusNode());
+                                final DateTime? picked = await showDatePicker(
+                                    context: context,
+                                    initialDate: selectedDate,
+                                    firstDate: DateTime(2015, 8),
+                                    lastDate: DateTime(2101),
+                                    initialEntryMode: DatePickerEntryMode.calendar,
+                                    useRootNavigator : false,
+                                    textDirection:TextDirection.rtl,
+                                    
+                                    );
+
+                                // ignore: unnecessary_null_comparison
+                                if (picked != null && picked != selectedDate)
+                                  setState(() {
+                                    selectedDate = picked;
+                                    transferrequestreasonController.text =
+                                        picked.toIso8601String();
+                                  });
+                              },
+                              decoration: InputDecoration(
+                                hintText: '10 ايام',
+                                hoverColor:AppColors.bgColor,
+                                hintStyle: TextStyle(
+                                  color: AppColors.bgColor,
+                                  height: getProportionateScreenHeight(0.4)
+                                ),
+                                fillColor: AppColors.whiteFontColor,
+                                filled: true,
+                                enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(15),
+                                    borderSide: BorderSide(
+                                        width: getProportionateScreenWidth(0), color: AppColors.whiteFontColor)),
+                                focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(15),
+                                    borderSide: BorderSide(
+                                        width: getProportionateScreenWidth(0), color: AppColors.whiteFontColor)),
                               ),
-                              fillColor: Colors.white,
-                              filled: true,
-                              enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(15),
-                                  borderSide: BorderSide(
-                                      width: 0, color: Colors.white)),
-                              focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(15),
-                                  borderSide: BorderSide(
-                                      width: 0, color: Colors.white)),
                             ),
                           ),
-                          SizedBox(height: 42),
+                          SizedBox(height: getProportionateScreenHeight(42)),
                           Center(
                             child: Container(
-                              height: 75,
+                              height: getProportionateScreenHeight(75),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(35),
                                 child: MaterialButton(
-                                  minWidth: 200,
+                                  minWidth:getProportionateScreenWidth(200),
                                   onPressed: () {
-                                    Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (_) => QueryScreenRejection()));
+                                     pop_up_approval(context).show();
                                   },
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
@@ -323,14 +362,15 @@ class _AnnualLeaveRequestScreenState extends State<AnnualLeaveRequestScreen> {
                                       Text(
                                         'تأكيد الطلب',
                                         style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 20,
+                                            color: AppColors.whiteFontColor,
+                                            fontSize: getProportionateText(20),
+                                            wordSpacing: 2,
                                             fontWeight: FontWeight.normal),
                                       ),
                                     ],
                                   ),
-                                  color: HexColor('#161D6F'),
-                                  height: 50,
+                                  color: AppColors.darkBlueFontColor,
+                                  height: getProportionateScreenHeight(50),
                                 ),
                               ),
                             ),
@@ -349,3 +389,5 @@ class _AnnualLeaveRequestScreenState extends State<AnnualLeaveRequestScreen> {
     );
   }
 }
+
+class CalendarDateRangePickerWidget {}

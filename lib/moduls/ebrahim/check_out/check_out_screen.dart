@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_demoui2/moduls/ebrahim/confirm_attendance/confirm_attendance_screen.dart';
 import 'package:flutter_demoui2/shared/components/components.dart';
+import 'package:flutter_demoui2/shared/components/size_config.dart';
+import 'package:flutter_demoui2/shared/styles/colors.dart';
 
 
 class CheckOutScreen extends StatefulWidget {
@@ -25,7 +27,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
     return Scaffold(
       appBar: AppBar(
         
-    backgroundColor: Color(0xFFFFC14F),
+    backgroundColor: AppColors.yellow,
     centerTitle: true,
     bottom: PreferredSize(
       preferredSize: Size.fromHeight(160),
@@ -34,13 +36,16 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Image.asset('assets/images/fingerprint1.png',height: 100,width: 100,),
-          Text('تسجيل الانصراف', style: TextStyle(color: Color(0xFF161D6F), fontSize: 30),),
+          Text('تسجيل الانصراف', style: TextStyle(color: Color(0xFF161D6F), fontSize: 30,fontWeight:FontWeight.bold)),
           SizedBox(height: 10,)
         ],
       ),
     ),
     actions:[
-      Icon(Icons.menu, color: Colors.white, size: 40,),
+      Padding(
+        padding: const EdgeInsets.only(left: 8),
+        child: Icon(Icons.menu, color: Colors.white, size: 40,),
+      ),
     ] ,
     shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30), bottomRight: Radius.circular(30))
@@ -55,11 +60,11 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
             child: Column(
               
               children:[
-                Image.asset('assets/images/fingerprint4.png',height: 120,),
-                SizedBox(height: 50,),
-                Text('برجاء ضع بصمتك لتاكيد الانصراف من الدوام',style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold,color: Colors.white),textAlign: TextAlign.center,maxLines: 3,), 
+                Image.asset('assets/images/fingerprint4.png',height: getProportionateScreenHeight(120),),
+                SizedBox(height: getProportionateScreenHeight(50),),
+                Text('برجاء ضع بصمتك لتاكيد الانصراف من الدوام',style: TextStyle(fontSize: getProportionateText(35),fontWeight: FontWeight.bold,color: AppColors.whiteFontColor),textAlign: TextAlign.center,maxLines: 3,), 
                 SizedBox(height: 15,), 
-                Text('يرجي وضع البصمة الخاصة بالموظف وليس شخص اخر حتى نقوم بالتاكد من هوية المستخدم ',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold,color: Colors.white),maxLines: 3,), 
+                Text('يرجي وضع البصمة الخاصة بالموظف وليس شخص اخر حتى نقوم بالتاكد من هوية المستخدم ',style: TextStyle(fontSize: getProportionateText(17),fontWeight: FontWeight.bold,color:AppColors.whiteFontColor),maxLines: 3,), 
           
               ]
             ),
