@@ -26,10 +26,14 @@ class _AttendanceRecordSuccessScreenState extends State<AttendanceRecordSuccessS
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                AppAssetsImage(getProportionateScreenHeight(150), getProportionateScreenWidth(150), "assets/images/white_yellow_fingerprint.png"),
+                Container(
+                    margin: EdgeInsets.only(left: getProportionateScreenWidth(50)),
+                    child: AppAssetsImage(getProportionateScreenHeight(275), getProportionateScreenWidth(265), "assets/images/white_yellow_fingerprint.png")
+                ),
+                SizedBox(height: getProportionateScreenHeight(40),),
+                Text("تم", style: TextStyle(color: Colors.white, fontSize: getProportionateText(28), height: 1),),
                 SizedBox(height: getProportionateScreenHeight(20),),
-                Text("تم", style: TextStyle(color: Colors.white, fontSize: getProportionateText(18)),),
-                Text("تسجيل الحضور", style: TextStyle(color: Colors.white, fontSize: getProportionateText(28)) ,)
+                Text("تسجيل الحضور", style: TextStyle(color: Colors.white, fontSize: getProportionateText(45), height: 1) ,)
               ],
             ),
           ),

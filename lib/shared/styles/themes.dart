@@ -8,7 +8,7 @@ ThemeData defaultTheme = ThemeData(
   cursorColor: HexColor('#3949AB'),
  // accentColor: HexColor('#3949AB'),
   hintColor: HexColor('#3949AB'),
-  fontFamily: 'ArbFONTS-4_AF',
+  fontFamily: 'ArbFont',
 
   scaffoldBackgroundColor: HexColor('#3949AB'),
   appBarTheme: AppBarTheme(

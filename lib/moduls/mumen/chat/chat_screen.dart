@@ -20,13 +20,13 @@ class ChatScreen extends StatefulWidget {
 
 class _ChatScreenState extends State<ChatScreen> {
 
-  @override
-  void initState() {
-    super.initState();
-    Timer(Duration(seconds: 3), () {
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => IncomingCallScreen()));
-    });
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   Timer(Duration(seconds: 3), () {
+  //     Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => IncomingCallScreen()));
+  //   });
+  // }
 
 
   @override
@@ -42,7 +42,9 @@ class _ChatScreenState extends State<ChatScreen> {
             color: AppColors.bgColor,
             image: DecorationImage(
               image: AssetImage("assets/images/chat_background.png"),
+              colorFilter: new ColorFilter.mode(AppColors.bgColor.withOpacity(0.6), BlendMode.dstOut),
               fit: BoxFit.cover,
+
             ),
           ),
           child: Column(

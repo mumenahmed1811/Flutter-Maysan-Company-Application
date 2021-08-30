@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_demoui2/shared/components/views/image.dart';
 import 'package:flutter_demoui2/shared/styles/colors.dart';
 
 class AppTextButton extends StatelessWidget {
@@ -32,14 +33,14 @@ class AppTextButton extends StatelessWidget {
   }
 }
 
-class RoundIconButton extends StatelessWidget {
-  RoundIconButton(this.btnHeight, this.btnWidth, this.btnColor, this.icon, this.iconHeight, this.iconWidth, this.iconColor, this.radius);
+class RoundImageButton extends StatelessWidget {
+  RoundImageButton(this.btnHeight, this.btnWidth, this.btnColor, this.dir, this.imageHeight, this.imageWidth, this.iconColor, this.radius);
   double btnHeight;
   double btnWidth;
   Color btnColor;
-  IconData icon;
-  double iconHeight;
-  double iconWidth;
+  String dir;
+  double imageHeight;
+  double imageWidth;
   Color iconColor;
   double radius;
 
@@ -52,10 +53,12 @@ class RoundIconButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(radius),
         color: btnColor
       ),
-      child: InkWell(
-        splashColor: Colors.blue,
-        //borderRadius: BorderRadius.circular(25.0),
-        child: SizedBox(width: iconWidth, height: iconHeight, child: Icon(icon, color: iconColor,),)
+      child: Center(
+        child: Container(
+            height: imageHeight,
+            width: imageWidth,
+          child: Image.asset(dir),
+        ),
       ),
     );
   }

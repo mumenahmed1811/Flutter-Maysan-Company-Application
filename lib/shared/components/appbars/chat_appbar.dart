@@ -56,13 +56,15 @@ class EmployeeImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      textDirection: TextDirection.ltr,
       children: [
         Column(
           children: [
-            Text(title, style: TextStyle(color: AppColors.darkBlueFontColor, fontSize: getProportionateText(13)),),
+            Text(title, style: TextStyle(color: AppColors.darkBlueFontColor, fontSize: getProportionateText(13), height: 1),),
+            SizedBox(height: getProportionateScreenHeight(5),),
             Text(
               status? "اون لاين" : "اوفلاين",
-              style: TextStyle(color: Colors.red, fontSize: getProportionateText(13)),
+              style: TextStyle(color: Colors.red, fontSize: getProportionateText(13), height: 1),
             ),
           ],
         ),

@@ -79,16 +79,13 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: ArbFONTS-4_AF
-      fonts:
-        - asset: assets/fonts/ArbFONTS-4_AF.ttf
-          
-    - family: ArbFONTS-beIN Normal 
-      fonts:
-        - asset: assets/fonts/ArbFONTS-beIN Normal.ttf
-    - family: ArbFONTS-bein-ar-normal 
+    - family: ArbFont
       fonts:
         - asset: assets/fonts/ArbFONTS-bein-ar-normal.ttf
+        - asset: assets/fonts/ArbFONTS-4_AF.ttf
+        - asset: assets/fonts/ArbFONTS-beIN Normal.ttf
+
+
        
          
   #

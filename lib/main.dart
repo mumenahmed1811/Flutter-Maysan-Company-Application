@@ -58,7 +58,7 @@ class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SizeConfig.init(context);
-    return HomeScreen();
+    return ChatScreen();
   }
 }
 
